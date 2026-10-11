@@ -1,0 +1,41 @@
+# Arquivos do computador e dos editores
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Configuração pessoal da IA
+CLAUDE.local.md
+.claude/settings.local.json
+.claude/credentials.json
+.agents/*.local.*
+
+# Credenciais e configurações locais
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+credentials-*.json
+client_secret*.json
+service-account*.json
+id_rsa*
+id_ed25519*
+.mcp.json
+
+# Dependências e temporários
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+.tmp/
+tmp/
+.sync.log
