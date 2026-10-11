@@ -20,6 +20,8 @@ empresa-OS/
     README.md
   .claude/
     skills/
+      configurar-cerebro/
+        SKILL.md
       cerebro/
         SKILL.md
       salvar/
@@ -35,14 +37,14 @@ Um cliente real ganha `clientes/<nome-do-cliente>/README.md` quando houver conte
 | [processos/](processos/README.md) | Como o trabalho é feito, com critérios, fontes e estágio de validação. |
 | [LOG.md](LOG.md) | Registro das sessões: data, autoria, trabalho, resultado e pendências. |
 | [AGENTS.md](AGENTS.md) | Orientações gerais para a IA. O CLAUDE.md importa essas regras. |
-| [.claude/skills/](.claude/skills/cerebro/SKILL.md) | As rotinas cerebro e salvar. |
+| [.claude/skills/](.claude/skills/configurar-cerebro/SKILL.md) | Configurar a base com configurar-cerebro; receber com cerebro; registrar e compartilhar com salvar. |
 
 ## 1. Criar a base da empresa
 
 1. Cada pessoa cria sua própria conta no [GitHub](https://github.com/signup).
 2. Abra o [repositório modelo](https://github.com/jesilveiraa/segundo-cerebro-modelo).
 3. Clique em **Use this template > Create a new repository**.
-4. Escolha quem será proprietário: uma conta de uma das pessoas ou uma organização da empresa. Use um nome como `cerebro-da-empresa` e selecione **Private**.
+4. Escolha quem será proprietário: uma conta de uma das pessoas ou uma organização da empresa. Escolha o nome da base, como `empresa-os`, e selecione **Private**.
 5. Clique em **Create repository from template**. Crie uma única base para a empresa.
 6. Se usou uma conta pessoal, abra **Settings > Collaborators > Add people** e convide a outra pessoa. Ela precisa aceitar o convite com a conta dela. Em uma organização, conceda acesso de escrita às pessoas que vão trabalhar na base.
 7. Copie o link da base que acabou de criar. Esse é o link que as duas vão usar, não o link deste modelo público.
@@ -53,7 +55,7 @@ A cópia da empresa tem vida própria. Mudanças futuras neste modelo não subst
 
 Use o **Claude Code em ambiente local**, com acesso aos arquivos e à execução de comandos. Uma conversa comum sem acesso ao computador não consegue fazer esta etapa.
 
-Abra uma pasta de trabalho no Claude Code. Escolha o destino da base fora de pastas sincronizadas por OneDrive, iCloud ou Dropbox. Use o prompt abaixo, preenchendo os três campos. No segundo computador, repita com o mesmo repositório da empresa e o destino local dessa pessoa.
+Abra uma pasta de trabalho no Claude Code. Escolha o destino da base fora de pastas sincronizadas por OneDrive, iCloud ou Dropbox. O destino inclui o nome da pasta que será criada, por exemplo `Projetos/empresa-os`, com o caminho completo do seu computador. Use o prompt abaixo, preenchendo os três campos. No segundo computador, repita com o mesmo repositório da empresa e o destino local dessa pessoa.
 
 ### Prompt para copiar a base
 
@@ -65,7 +67,7 @@ Pasta de destino: <CAMINHO_COMPLETO_DA_PASTA_NO_MEU_COMPUTADOR>
 Quem está trabalhando: <MEU_NOME>
 
 Confira se você tem acesso local aos arquivos e à execução de comandos.
-Confira o Git e o acesso ao GitHub para receber e enviar atualizações.
+Confira o Git e o acesso ao GitHub para copiar essa base.
 Se faltar uma ferramenta ou acesso, explique o necessário e me guie na
 configuração pelo fluxo oficial. Não peça senha ou token nesta conversa.
 Configure apenas o necessário para esta base, sem alterar outros projetos.
@@ -78,39 +80,47 @@ Clone o repositório privado da empresa para a pasta de destino.
 Confirme que o destino de sincronização é essa base, e não o modelo público
 jesilveiraa/segundo-cerebro-modelo. Não crie outra base no GitHub.
 
-Leia README.md, AGENTS.md e CLAUDE.md. Confira as skills cerebro e salvar.
-Informe qual pasta devo abrir no Claude Code para usá-las.
-Pergunte somente as informações necessárias para preencher identidade.md.
-Não invente dados da empresa nem cadastre clientes fictícios.
+Leia README.md, AGENTS.md e CLAUDE.md da pasta clonada.
+Confira se .claude/skills/configurar-cerebro/SKILL.md está disponível.
+Informe a pasta exata que devo abrir no Claude Code e me oriente a usar:
+/configurar-cerebro Meu nome é <MEU_NOME>. A base da empresa é
+<LINK_DO_REPOSITORIO_PRIVADO_DA_EMPRESA>.
 
-Registre a configuração no LOG.md com meu nome, data, resultado e fonte.
-Use a rotina salvar para compartilhar os registros dessa configuração.
-Confira o recebimento e envio e diga o que foi comprovado e o que falta.
-Se as skills ainda não aparecerem nesta conversa, abra uma nova sessão
-na pasta clonada ou leia seus SKILL.md e siga as rotinas diretamente.
+A cópia é esta primeira etapa. O preenchimento da identidade, o registro
+no log e o teste de envio ficam para configurar-cerebro, na pasta clonada.
+Se a skill não aparecer, me oriente a abrir uma nova sessão nessa pasta
+ou a pedir que leia o SKILL.md e siga a rotina diretamente.
 ```
 
 O Git e a autenticação precisam estar disponíveis em cada computador. Siga as telas oficiais de acesso quando solicitado. As skills orientam a rotina, mas não substituem essas permissões.
 
-## 3. Primeiro uso
+## 3. Configurar a base em cada computador
 
 1. Abra a pasta criada no Claude Code.
-2. Use `/cerebro` e diga seu nome e o assunto em que quer trabalhar. Exemplo: `/cerebro vamos registrar como preparamos reuniões`.
-3. Preencha a identidade com informações reais. Cadastre clientes apenas quando houver contexto para guardar.
-4. Trabalhe com a IA e confira os arquivos usados como fonte.
-5. Ao terminar, use `/salvar`.
-6. Confira a resposta: quais arquivos foram salvos, se o envio foi confirmado e quais pendências ficaram.
+2. Use `/configurar-cerebro` e informe seu nome e o link da base da empresa, como orientado pelo prompt.
+3. Responda ao que faltar sobre a empresa e seu papel. No segundo computador, a skill aproveita a identidade já preenchida pela primeira pessoa.
+4. Siga as telas oficiais se houver alguma pendência de acesso. A skill confere que a base é privada e que consegue receber as atualizações.
+5. A skill ajusta a apresentação da empresa, registra a sessão no LOG.md e usa salvar para enviar esses ajustes e testar a escrita.
+6. Confira o resultado: pasta aberta, base escolhida, recebimento, envio e pendências. Um resultado parcial deve indicar o que falta.
 
-Teste a troca com outra pessoa: uma altera um critério em um arquivo e usa salvar; a outra usa cerebro e mostra a alteração recebida. Depois façam o caminho de volta.
+Essa configuração é feita em cada computador. A skill confere a ligação com a base escolhida; as rotinas cerebro e salvar usam essa ligação para sincronizar. O nome da empresa e o link não precisam ser escritos dentro das skills.
 
-## Rotina
+Teste a troca com outra pessoa: uma altera um critério real em um arquivo e usa salvar; a outra usa cerebro e mostra a alteração recebida. Depois façam o caminho de volta. A configuração de um computador só comprova o acesso dele.
 
+## 4. Usar no dia a dia
+
+1. Ao começar, use `/cerebro` e diga seu nome e o assunto em que quer trabalhar. Exemplo: `/cerebro vamos registrar como preparamos reuniões`.
+2. Trabalhe com a IA e confira os arquivos usados como fonte. Cadastre clientes apenas quando houver contexto real para guardar.
+3. Ao terminar, use `/salvar`.
+4. Confira quais arquivos foram salvos, se o envio foi confirmado e quais pendências ficaram.
+
+- **configurar-cerebro:** prepara a base neste computador ou retoma uma configuração incompleta.
 - **cerebro:** recebe atualizações e lê o contexto relevante para começar.
 - **salvar:** atualiza os registros nos lugares certos, acrescenta a sessão ao log e compartilha as alterações.
 
 Salvar no computador não garante que o conteúdo chegou à outra pessoa. Se faltar internet ou acesso, a IA deve dizer o que ficou local. Se as duas alterarem o mesmo conteúdo, a rotina compara as versões e pede ajuda somente quando houver uma decisão de significado em aberto.
 
-As skills também podem ser usadas por um pedido claro, como “atualize o cérebro antes de começarmos” ou “salve e compartilhe o trabalho desta sessão”.
+As skills também podem ser usadas por um pedido claro, como “configure esta base neste computador”, “atualize o cérebro antes de começarmos” ou “salve e compartilhe o trabalho desta sessão”.
 
 ## Fontes e conexões da empresa
 

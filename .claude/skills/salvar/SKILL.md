@@ -5,7 +5,7 @@ description: Registrar o trabalho da sessão nos arquivos da empresa, acrescenta
 
 # Salvar
 
-Transforme o trabalho da sessão em registros úteis e compartilhe as alterações pela base configurada. Um pedido claro de salvar, compartilhar ou encerrar autoriza esse envio. Se não houve esse pedido, registre o que já foi autorizado localmente e não envie por iniciativa própria.
+Transforme o trabalho da sessão em registros úteis e compartilhe as alterações pela base configurada. Um pedido claro de salvar, compartilhar ou encerrar autoriza esse envio. O pedido de configurar-cerebro também inclui enviar os ajustes dessa configuração para a base privada já conferida. Se não houve um desses pedidos, registre o que já foi autorizado localmente e não envie por iniciativa própria.
 
 ## Conferir a base e o escopo
 
