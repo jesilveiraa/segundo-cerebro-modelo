@@ -7,6 +7,8 @@ description: Configurar o segundo cérebro da empresa no computador depois da c�
 
 Prepare uma base já copiada para o computador. O pedido de configurar inclui registrar e compartilhar os ajustes desta sessão na base privada da empresa, depois de conferir o destino. Use as rotinas [cerebro](../cerebro/SKILL.md) e [salvar](../salvar/SKILL.md) para receber e enviar; elas consultam origin e não precisam de um endereço fixo por empresa.
 
+Conduza a preparação para uma pessoa que está começando. Faça as conferências e os comandos pelo acesso disponível, sem transferir uma lista de comandos técnicos para ela. Reutilize nome, link e respostas já dados; reúna as perguntas que faltarem sobre a identidade. Explique uma pendência com o próximo passo concreto. Detalhes de Git ficam nos arquivos e só entram na resposta quando ajudam a resolver o problema.
+
 ## 1. Conferir a pasta e a base
 
 Leia [README.md](../../../README.md), [AGENTS.md](../../../AGENTS.md), [CLAUDE.md](../../../CLAUDE.md), [identidade.md](../../../identidade.md) e os registros recentes de [LOG.md](../../../LOG.md).
@@ -59,6 +61,8 @@ O teste deste computador não comprova a troca entre duas pessoas. Oriente a dem
 ## 5. Entregar o resultado
 
 Informe a pasta que deve ficar aberta, o nome e link da base compartilhada, os documentos ajustados e os resultados separados: leitura recebida, escrita enviada e troca entre computadores. Cite as pendências reais de acesso ou identidade.
+
+Prefira uma resposta curta: “A base está preparada nesta pasta. Recebimento e envio conferidos. Falta testar a troca com a outra pessoa.” Só afirme os resultados comprovados; nomeie a pendência quando algum deles falhar.
 
 Mostre a rotina: `/cerebro` ao começar e `/salvar` ao terminar. Configurar-cerebro é usado na preparação ou quando houver necessidade de retomar ajustes, não em toda sessão.
 

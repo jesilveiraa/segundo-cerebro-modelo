@@ -4,6 +4,16 @@ Uma base em arquivos para guardar contexto, processos e conhecimento do trabalho
 
 Este é um **modelo público da LÍNIA Consultoria**. Crie uma base privada própria para sua empresa antes de trabalhar. As pessoas da mesma empresa usam essa mesma base, cada uma com sua conta e sua pasta no computador.
 
+## Por onde começar
+
+| Sua situação | Comece aqui |
+|---|---|
+| A empresa ainda não tem uma base | Crie uma única base pela etapa 1. Depois siga as etapas 2 e 3. |
+| Outra pessoa já criou a base da empresa | Aceite o convite de acesso e use o link dessa base. Comece na etapa 2, sem criar outro repositório. |
+| A base já está configurada neste computador | Vá direto à etapa 4: cerebro, trabalho e salvar. |
+
+Antes da cópia, abra o Claude no modo **Code**, em ambiente local, e entre com uma conta que tenha acesso ao Code. Se aparecer um pedido de login ou de plano, resolva esse acesso antes de colar o prompt. Os mentores podem acompanhar essa primeira preparação.
+
 ## Estrutura
 
 ```text
@@ -41,6 +51,8 @@ Um cliente real ganha `clientes/<nome-do-cliente>/README.md` quando houver conte
 
 ## 1. Criar a base da empresa
 
+Esta etapa é feita uma vez por empresa. Quem vai usar uma base já criada começa na etapa 2, depois de aceitar o convite de acesso.
+
 1. Cada pessoa cria sua própria conta no [GitHub](https://github.com/signup).
 2. Abra o [repositório modelo](https://github.com/jesilveiraa/segundo-cerebro-modelo).
 3. Clique em **Use this template > Create a new repository**.
@@ -55,7 +67,7 @@ A cópia da empresa tem vida própria. Mudanças futuras neste modelo não subst
 
 Use o **Claude Code em ambiente local**, com acesso aos arquivos e à execução de comandos. Uma conversa comum sem acesso ao computador não consegue fazer esta etapa.
 
-Abra uma pasta de trabalho no Claude Code. Escolha o destino da base fora de pastas sincronizadas por OneDrive, iCloud ou Dropbox. O destino inclui o nome da pasta que será criada, por exemplo `Projetos/empresa-os`, com o caminho completo do seu computador. Use o prompt abaixo, preenchendo os três campos. No segundo computador, repita com o mesmo repositório da empresa e o destino local dessa pessoa.
+Abra uma pasta local de trabalho no Claude Code. Use o prompt abaixo, preenchendo somente o link da base da empresa e seu nome. A IA ajuda a escolher onde criar a pasta; você não precisa escrever um caminho completo. Se já tiver escolhido um local, informe isso na conversa. No segundo computador, use o mesmo link e o nome da pessoa que está trabalhando.
 
 ### Prompt para copiar a base
 
@@ -63,33 +75,21 @@ Abra uma pasta de trabalho no Claude Code. Escolha o destino da base fora de pas
 Quero trazer o cérebro da minha empresa para este computador.
 
 Repositório da empresa: <LINK_DO_REPOSITORIO_PRIVADO_DA_EMPRESA>
-Pasta de destino: <CAMINHO_COMPLETO_DA_PASTA_NO_MEU_COMPUTADOR>
 Quem está trabalhando: <MEU_NOME>
 
-Confira se você tem acesso local aos arquivos e à execução de comandos.
-Confira o Git e o acesso ao GitHub para copiar essa base.
-Se faltar uma ferramenta ou acesso, explique o necessário e me guie na
-configuração pelo fluxo oficial. Não peça senha ou token nesta conversa.
-Configure apenas o necessário para esta base, sem alterar outros projetos.
-
-Confira a pasta de destino. Preserve qualquer conteúdo existente.
-Se já for a base indicada, reutilize-a; se houver outro conteúdo,
-explique a situação antes de mudar o destino. Não sobrescreva arquivos.
-
-Clone o repositório privado da empresa para a pasta de destino.
-Confirme que o destino de sincronização é essa base, e não o modelo público
-jesilveiraa/segundo-cerebro-modelo. Não crie outra base no GitHub.
-
-Leia README.md, AGENTS.md e CLAUDE.md da pasta clonada.
-Confira se .claude/skills/configurar-cerebro/SKILL.md está disponível.
-Informe a pasta exata que devo abrir no Claude Code e me oriente a usar:
-/configurar-cerebro Meu nome é <MEU_NOME>. A base da empresa é
-<LINK_DO_REPOSITORIO_PRIVADO_DA_EMPRESA>.
-
-A cópia é esta primeira etapa. O preenchimento da identidade, o registro
-no log e o teste de envio ficam para configurar-cerebro, na pasta clonada.
-Se a skill não aparecer, me oriente a abrir uma nova sessão nessa pasta
-ou a pedir que leia o SKILL.md e siga a rotina diretamente.
+Confira o acesso local, o Git e o acesso ao GitHub. Se faltar algo,
+me guie pelo fluxo oficial, sem pedir senha ou token nesta conversa.
+Crie uma pasta com o nome dessa base em um local de trabalho fora de
+OneDrive, iCloud e Dropbox. Se o local não estiver claro, me ajude a escolher.
+Preserve arquivos existentes; reutilize a pasta se já for essa mesma base.
+Copie a base privada indicada, sem criar outro repositório nem alterar
+outros projetos. Confira que a ligação é com ela, não com o modelo público.
+Leia README.md, AGENTS.md e CLAUDE.md e confira a skill configurar-cerebro.
+Ao terminar, diga qual pasta abrir no Claude Code e entregue o próximo
+pedido pronto para copiar: /configurar-cerebro, com meu nome e o link acima.
+O preenchimento da identidade, o log e o teste de envio ficam para essa skill.
+Se ela não aparecer, me oriente a abrir uma nova sessão na pasta criada
+ou pedir que leia .claude/skills/configurar-cerebro/SKILL.md e siga a rotina.
 ```
 
 O Git e a autenticação precisam estar disponíveis em cada computador. Siga as telas oficiais de acesso quando solicitado. As skills orientam a rotina, mas não substituem essas permissões.
@@ -98,6 +98,7 @@ O Git e a autenticação precisam estar disponíveis em cada computador. Siga as
 
 1. Abra a pasta criada no Claude Code.
 2. Use `/configurar-cerebro` e informe seu nome e o link da base da empresa, como orientado pelo prompt.
+   Você pode copiar o pedido pronto que a IA entregou no fim da etapa 2.
 3. Responda ao que faltar sobre a empresa e seu papel. No segundo computador, a skill aproveita a identidade já preenchida pela primeira pessoa.
 4. Siga as telas oficiais se houver alguma pendência de acesso. A skill confere que a base é privada e que consegue receber as atualizações.
 5. A skill ajusta a apresentação da empresa, registra a sessão no LOG.md e usa salvar para enviar esses ajustes e testar a escrita.
@@ -121,6 +122,8 @@ Teste a troca com outra pessoa: uma altera um critério real em um arquivo e usa
 Salvar no computador não garante que o conteúdo chegou à outra pessoa. Se faltar internet ou acesso, a IA deve dizer o que ficou local. Se as duas alterarem o mesmo conteúdo, a rotina compara as versões e pede ajuda somente quando houver uma decisão de significado em aberto.
 
 As skills também podem ser usadas por um pedido claro, como “configure esta base neste computador”, “atualize o cérebro antes de começarmos” ou “salve e compartilhe o trabalho desta sessão”.
+
+Se precisar de ajuda, copie: “Confira o que falta para receber ou salvar as atualizações. Preserve meus arquivos e explique o próximo passo em linguagem simples.”
 
 ## Fontes e conexões da empresa
 
