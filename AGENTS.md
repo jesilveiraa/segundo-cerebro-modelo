@@ -8,7 +8,7 @@ Para a preparação inicial ou retomada da configuração, seguir a skill config
 
 1. Quando houver acesso local, seguir a skill cerebro para receber as atualizações antes de editar. Se já foi executada nesta sessão, conferir novas mudanças apenas quando necessário.
 2. Ler README.md, identidade.md e as entradas de clientes ou processos relevantes. Consultar os registros recentes de LOG.md e aprofundar somente o assunto solicitado.
-3. Identificar quem está trabalhando pela conversa ou confirmação. Não inferir pelo computador, login ou autoria Git. Registrar `a confirmar` e perguntar se faltar essa informação.
+3. Identificar a pessoa pelo cadastro confirmado em CLAUDE.local.md desta cópia, vinculado à base e à conta GitHub. Seguir a conferência de autoria em cerebro. Uma identificação explícita na conversa prevalece nesta sessão. Pedir confirmação se faltar cadastro, a conta mudar ou houver ambiguidade; não deduzir um nome humano apenas pelo login, computador ou autoria Git.
 4. Usar fontes reais e indicar data. Distinguir fato confirmado, proposta, hipótese e pendência.
 
 ## Onde guardar
@@ -31,6 +31,8 @@ Informações atuais de tarefas, agenda, planilhas e gravações ficam nos siste
 ## Encerrar
 
 Toda sessão, inclusive análise sem outros arquivos alterados, recebe entrada em LOG.md: data, quem trabalhou, apoio de IA, o que foi feito, links, resultado, pendências e fonte. O log não substitui documentos de decisão ou tarefas. Preservar as entradas anteriores; correções recebem nova entrada.
+
+O cadastro local confirmado permite registrar a pessoa sem perguntar seu nome em toda sessão. Ele não é compartilhado. Conferir que CLAUDE.local.md continua ignorado pelo Git e nunca incluí-lo no envio. Não copiar o cadastro de outra pessoa para esta máquina.
 
 Seguir a skill salvar quando a pessoa pedir para salvar, compartilhar ou encerrar o trabalho. O pedido de configurar-cerebro também inclui registrar e enviar os ajustes dessa configuração para a base privada conferida. Se ainda não pediu envio, registrar a sessão localmente e informar essa pendência. Essa autorização vale para as alterações da sessão na base configurada; não autoriza alterações em outros sistemas.
 

@@ -4,7 +4,7 @@ Registro das sessões desta empresa. O modelo começa sem histórico de empresa.
 
 Acrescentar uma entrada ao terminar cada sessão, sem apagar as anteriores. A skill salvar registra e compartilha o trabalho. Se o envio não for possível, informar que os arquivos ficaram locais.
 
-Cada entrada contém data, pessoa ou pessoas, apoio de IA, trabalho realizado, links, resultado e pendências e fonte. Não inferir quem trabalhou pelo computador ou login.
+Cada entrada contém data, pessoa ou pessoas, apoio de IA, trabalho realizado, links, resultado e pendências e fonte. A pessoa vem do cadastro local confirmado ou da identificação explícita na sessão. Não deduzir um nome humano apenas pelo computador, login ou autoria Git.
 
 ## Modelo de entrada
 

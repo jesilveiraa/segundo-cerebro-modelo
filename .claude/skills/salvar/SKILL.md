@@ -17,7 +17,7 @@ Identifique o conteúdo desta sessão e o que já existia. Revise as diferenças
 
 ## Atualizar os registros
 
-1. Identifique quem trabalhou pela conversa ou confirmação. Se faltar, pergunte e use a confirmar enquanto a resposta não chegar. Cite a ferramenta de IA como apoio.
+1. Reutilize a pessoa reconhecida nesta sessão pela conferência de autoria de cerebro, ou a identificação explícita na conversa. Se a autoria ainda não tiver sido conferida, siga somente essa conferência, sem executar de novo toda a atualização. O cadastro local confirmado evita perguntar o nome a cada envio; peça confirmação quando faltar evidência ou a conta mudar. Cite a ferramenta de IA como apoio.
 2. Separe fatos, decisões confirmadas, propostas e pendências. Não converter uma ideia em procedimento validado nem inventar data, responsável ou acesso.
 3. Salve cada informação em sua fonte: identidade da empresa em identidade.md; critérios e procedimentos em processos/; contexto e resultado específico em clientes/<cliente>/. Fontes e conexões gerais ficam no README da raiz; as específicas, no cliente.
 4. Quando criar arquivos, atualize os índices relevantes. Crie cliente somente quando houver contexto real. Preserve fontes históricas e acrescente data e origem das correções.
@@ -27,7 +27,7 @@ Identifique o conteúdo desta sessão e o que já existia. Revise as diferenças
 
 Use o Git disponível, preservando os dados e o histórico:
 
-1. Consulte `git diff`, `git diff --cached`, `git ls-files --others --exclude-standard` e `git diff --check`. Confira também arquivos novos. Não enviar credenciais, conteúdo fora da sessão ou arquivos locais ignorados. A existência de .gitignore não substitui a revisão.
+1. Consulte `git diff`, `git diff --cached`, `git ls-files --others --exclude-standard` e `git diff --check`. Confira também arquivos novos. Não enviar credenciais, conteúdo fora da sessão ou arquivos locais ignorados. CLAUDE.local.md é o cadastro pessoal desta cópia e nunca deve ser enviado, mesmo se estiver indevidamente preparado. A existência de .gitignore não substitui a revisão.
 2. Se houver alterações já preparadas para envio fora do escopo, preserve-as e esclareça como separar o trabalho antes de registrar. Não misturar nem desfazer a preparação de outra pessoa. Para arquivos com trechos de outra sessão, separar os trechos ou esclarecer o escopo antes de incluí-los.
 3. Confira nome e e-mail de autoria Git configurados. Se faltarem, oriente a configuração local da base com dados fornecidos pela pessoa. Essa autoria técnica não determina quem consta no LOG.md.
 4. Prepare apenas os caminhos ou trechos desta sessão. Para arquivos inteiros conferidos, use `git add -- <caminhos>` e revise `git diff --cached`. Não usar inclusão indiscriminada de toda a pasta. Registre com `git commit -m <resumo-do-trabalho>` se houver conteúdo preparado. Se uma tentativa anterior já registrou o trabalho, não criar uma versão vazia.

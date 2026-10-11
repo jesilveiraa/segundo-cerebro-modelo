@@ -25,7 +25,22 @@ Confira que a base é privada. Use o GitHub CLI ou uma ferramenta GitHub dispon�
 
 ## 2. Conferir o acesso deste computador
 
-Identifique a pessoa pela conversa ou confirmação, sem deduzir pelo login, computador ou autoria Git. Pergunte seu nome se faltar. Cada pessoa usa sua própria conta e seu próprio acesso à mesma base.
+Cada pessoa usa sua própria conta e seu próprio acesso à mesma base. Confira o usuário GitHub autenticado com `gh api user --jq .login`, quando o CLI estiver disponível, ou pela ferramenta GitHub autenticada. Essa consulta identifica a conta, não confirma por si só o nome humano para o log.
+
+Leia CLAUDE.local.md se existir. Preserve qualquer instrução local anterior. Se já houver um cadastro confirmado para esta base e a mesma conta, reutilize-o. Na primeira configuração, confirme uma vez como a pessoa quer ser identificada no log, aproveitando o nome já fornecido na conversa. Se a conta não puder ser identificada, peça o usuário GitHub confirmado pela pessoa e registre a origem dessa informação. Não invente uma associação entre conta e nome.
+
+Acrescente ou atualize somente a seção **Pessoa desta cópia** em CLAUDE.local.md, com nome confirmado, usuário GitHub, proprietário/repositório, data e fonte da confirmação. Não guardar credenciais, e-mail pessoal ou dados do computador nesse cadastro. Use este formato:
+
+```markdown
+## Pessoa desta cópia
+
+- Nome para o log: <nome confirmado>
+- Conta GitHub: <usuario>
+- Base: <proprietario/repositorio>
+- Confirmação: <AAAA-MM-DD e fonte>
+```
+
+Confira `git check-ignore -- CLAUDE.local.md` e o estado Git. O modelo já ignora esse arquivo. Se não estiver ignorado ou já estiver rastreado, não o publique: confira o conteúdo e corrija a situação sem desfazer mudanças alheias. Uma atualização de .gitignore, se necessária e autorizada nesta configuração, é compartilhável; o cadastro pessoal continua local. Não criar esse arquivo preenchido no modelo público.
 
 Confira a autenticação pelo fluxo oficial do GitHub disponível neste computador. Se faltar acesso, oriente as telas de login ou aceite do convite. Não peça senha, token ou arquivo de credenciais na conversa. Não crie contas, repositórios ou convites como parte desta rotina. Não instale ferramentas, altere configurações globais ou troque outras contas silenciosamente; explique a necessidade e siga o caminho escolhido pela pessoa.
 
@@ -52,6 +67,8 @@ Não reescreva as skills cerebro e salvar para fixar nome, caminho ou link da em
 
 Registre a sessão em LOG.md com data real, autoria humana, Claude Code como apoio, ajustes e documentos, fonte e pendências. Descreva separadamente o acesso recebido e o envio ainda a conferir. Preserve as entradas existentes. Se esta sessão já estiver registrada e não houver trabalho novo, retome a conferência sem duplicá-la.
 
+Se a sessão veio do primeiro prompt, registre também o link da base criada e o resultado real do convite, distinguindo convite enviado de acesso aceito. Reutilize a evidência da criação; não envie convites adicionais como efeito da configuração.
+
 Execute salvar para revisar e enviar somente os ajustes desta sessão. O registro real da configuração é suficiente para testar a escrita; não crie arquivos de teste, versões vazias ou alterações artificiais. Se houver apenas pendências de um envio anterior, retome esse envio conforme salvar. Se não houver nada novo a enviar nem envio anterior pendente, informe que esta execução não testou uma nova escrita.
 
 Confirme o envio pela conferência remota prevista em salvar. Se falhar, informe o que ficou local. Não escreva no log que o envio foi confirmado antes dessa conferência nem crie um ciclo de novas versões apenas para registrar cada envio.
@@ -65,5 +82,7 @@ Informe a pasta que deve ficar aberta, o nome e link da base compartilhada, os d
 Prefira uma resposta curta: “A base está preparada nesta pasta. Recebimento e envio conferidos. Falta testar a troca com a outra pessoa.” Só afirme os resultados comprovados; nomeie a pendência quando algum deles falhar.
 
 Mostre a rotina: `/cerebro` ao começar e `/salvar` ao terminar. Configurar-cerebro é usado na preparação ou quando houver necessidade de retomar ajustes, não em toda sessão.
+
+Informe que o nome foi vinculado à conta no cadastro local e não precisa ser repetido em toda sessão. Se esse cadastro estiver pendente, explique o que falta.
 
 Se a skill não aparecer no Claude Code, oriente abrir uma nova sessão na pasta clonada. Como alternativa, leia este SKILL.md e siga a rotina diretamente. Esta configuração não instala agendadores, conecta ferramentas externas, publica materiais ou compartilha acessos.

@@ -28,9 +28,17 @@ Atualize a cópia local da base e prepare o contexto solicitado. Responda em por
 Depois de receber, ou de identificar a limitação:
 
 - Leia identidade.md, os registros recentes de LOG.md e a entrada de processos ou clientes indicada pelo assunto. Siga os links relevantes, sem carregar todo o acervo.
-- Identifique quem conduz a sessão pela conversa ou confirmação. Nunca deduza pelo login ou nome do computador. Se faltar, pergunte e mantenha a autoria como a confirmar.
+- Identifique quem conduz a sessão pela conferência de autoria abaixo. Não pedir o nome de novo se o cadastro já estiver confirmado para esta cópia.
 - Se a pessoa não indicou o assunto, apresente o mapa e peça apenas a prioridade necessária para continuar. Não invente uma tarefa ou uma fila de prioridades.
 - Uma versão atual da pasta não comprova dados atuais de ferramentas externas. Consulte essas fontes pelos conectores somente quando a tarefa exigir e houver acesso autorizado.
+
+## Reconhecer a pessoa
+
+1. Se a pessoa se identificou explicitamente nesta sessão, use esse nome. Se for diferente do cadastro local, essa identificação vale para a sessão; não substitua o cadastro permanente sem confirmar.
+2. Caso contrário, leia a seção Pessoa desta cópia em CLAUDE.local.md. Confira nome, conta GitHub, fonte da confirmação e se o proprietário/repositório corresponde ao origin atual, considerando HTTPS e SSH equivalentes.
+3. Quando houver acesso ao GitHub CLI, consulte `gh api user --jq .login`; outra ferramenta GitHub autenticada também pode identificar a conta. Se corresponder ao cadastro, use o nome confirmado, sem nova pergunta. Se a conta for diferente, confirme quem está trabalhando antes de atribuir o log. Não tratar a conta nova como a pessoa anterior.
+4. Se a consulta à conta estiver indisponível, pode usar o cadastro local já confirmado e pertinente à base, enquanto não houver evidência de troca de pessoa ou conta. Indique a limitação de autenticação quando afetar a tarefa. Ausência de internet não apaga a identidade cadastrada.
+5. Sem cadastro confirmado, com base diferente ou em situação ambígua, pergunte uma vez quem trabalha e mantenha a autoria como a confirmar até receber a resposta. Oriente configurar-cerebro para guardar a associação local. Não deduzir o nome humano pelo login, nome do computador ou autoria Git, nem adotar o cadastro recebido de outra pessoa.
 
 ## Resposta
 
