@@ -51,6 +51,8 @@ Não crie outro repositório, convites ou uma pasta no meu computador.
 
 A skill configurar-cerebro confere o destino e o acesso, preenche identidade e mapas com informações reais e usa salvar para concluir em main. Se houver bloqueio de acesso ou conflito, preserva os arquivos e explica a pendência.
 
+Ao concluir o preparo, a IA mostra o que entendeu sobre a empresa, os arquivos usados como fonte e o que ainda falta confirmar. Conferir esse entendimento e corrigir o que for necessário.
+
 ### Outra pessoa na mesma base
 
 Depois de aceitar o convite e selecionar a mesma base, pode dizer:
@@ -76,6 +78,8 @@ Não há cadastro obrigatório no computador. Uma identificação confirmada val
 5. Conferir a resposta: o trabalho deve estar em main, disponível para a outra pessoa.
 
 Salvar registra os documentos e o log, recebe atualizações da outra pessoa, combina os trabalhos e confirma o resultado remoto. Enviar uma branch ou abrir um PR não é, sozinho, conclusão desse salvamento.
+
+Se quiser retomar em outra sessão, pode pedir: “Salva e me dá um prompt para continuar em outra sessão.” A IA entrega um texto curto com objetivo, arquivos, resultado e próximo passo conhecido. O prompt só aparece quando pedido; “salva meu trabalho” mantém a confirmação curta. Não é necessário usar uma frase exata.
 
 Se houver conflito ou acesso insuficiente, a IA preserva o resultado e informa o que falta. Nunca força o envio para sobrescrever o trabalho da outra pessoa. Uma sessão já aberta também precisa conferir atualizações antes de continuar; não é necessário ensinar comandos Git às participantes.
 

@@ -24,6 +24,24 @@ Reutilizar quem se identificou na conversa. Se faltar confirmação ou houver am
 3. Acrescentar o registro da sessão em LOG.md com autoria, apoio de IA, trabalho e links, resultado, pendências e fonte. Se houver apenas retomada de um envio já registrado, não duplicar a entrada. Não afirmar envio antes de conferir.
 4. Conferir diferenças, arquivos novos e conteúdo preparado, incluindo `git diff --check`. Não incluir credenciais, arquivos pessoais ignorados ou conteúdo fora do escopo. Se houver conteúdo preparado alheio, preservá-lo e separar o escopo antes de commit.
 
+### Selecionar o que fica como conhecimento
+
+Guardar o que foi produzido ou confirmado dentro do pedido, sem copiar toda a conversa para os documentos. Perguntas passageiras, exemplos fictícios e tentativas descartadas não viram fatos sobre a empresa. O log continua obrigatório mesmo quando a sessão só resultar em análise.
+
+| Informação da sessão | Onde e como registrar |
+|---|---|
+| Fato confirmado sobre a empresa, pessoa ou critério | identidade.md ou contexto pertinente, com data e fonte. |
+| Procedimento ou critério de trabalho | Documento pertinente em processos/. Identificar rascunho, proposta ou validação conforme a evidência. |
+| Decisão ou resultado específico de cliente | Documento pertinente em clientes/<cliente>/, com data, origem e motivo disponível. Referenciar no índice e no log quando necessário. |
+| Decisão geral sobre identidade ou processo | Na fonte do assunto. Não criar uma pasta de decisões separada sem necessidade. |
+| Hipótese, ideia ou ponto a confirmar | Identificar seu estágio no documento pertinente, se fizer parte do trabalho pedido. Não converter em decisão ou compromisso. |
+| Tarefa, prazo, agenda ou indicador atual | Consultar a fonte operacional escolhida no README. Registrar seu link na base, sem manter outra lista concorrente. Salvar não autoriza alterar essa ferramenta externa. |
+| Trabalho e limitações desta sessão | LOG.md, com links para os documentos, resultado e pendências reais. O log não é lista de tarefas atualizada. |
+
+Se a fonte de tarefas ainda estiver a definir, registrar essa ausência e os pontos em aberto no relato da sessão. Não inventar fonte, responsável ou prazo, nem gerar arquivo de pendências ou controle de tarefas por iniciativa própria.
+
+Antes de acrescentar informação, consultar o documento pertinente para evitar duplicações. Aproveitar um registro que já exista e linká-lo a partir dos índices necessários. Quando houver correção confirmada, atualizar o contexto vigente e preservar a origem e a data da correção; transcrições e registros históricos não são reescritos como se a versão corrigida fosse a fala original. Se fontes divergirem e não houver evidência para resolver, registrar a divergência como ponto a confirmar.
+
 ## Concluir em main
 
 Execute pelo Git disponível nesta base. Não fixar o nome da branch da sessão no procedimento.
@@ -42,5 +60,13 @@ Execute pelo Git disponível nesta base. Não fixar o nome da branch da sessão 
 Dizer o que foi registrado, onde está e se main contém o trabalho. Exemplo, somente com comprovação: “Salvei o processo e o log na base compartilhada. A outra pessoa já pode consultar a versão atualizada.”
 
 Se não concluiu: “Os arquivos estão preservados na sessão. Ainda falta concluir o salvamento na base compartilhada por [motivo e próximo passo].” Não chamar uma branch enviada ou PR aberto de salvamento concluído.
+
+### Prompt de continuação, somente quando pedido
+
+Pedir para salvar, compartilhar ou encerrar não pede automaticamente um prompt de continuação. Entregar a confirmação curta acima. Gerar o prompt quando a pessoa pedir, por exemplo: “Salva e me dá um prompt para continuar em outra sessão.” Não exigir que use uma frase exata ou um comando especial, nem perguntar a cada salvamento se quer o prompt.
+
+Quando solicitado, entregar um texto curto para copiar com objetivo, caminhos dos arquivos pertinentes, resultado concluído, pontos em aberto e próximo passo conhecido. Reutilizar essas informações da sessão, sem copiar toda a conversa, inventar próximos passos ou transformar sugestões em tarefas aprovadas. Pedir à nova sessão que confira as instruções e a versão compartilhada antes de continuar.
+
+Indicar o estado real do salvamento. Se main não contiver os ajustes, dizer que o resultado está apenas na sessão, explicar como recuperá-lo a partir da localização conhecida e priorizar concluir o envio. Não orientar a nova sessão como se fosse encontrar na base compartilhada arquivos ainda não enviados. Se a pessoa pedir apenas um prompt, isso não autoriza novo envio por si só.
 
 Esta rotina não cria repositórios ou convites, publica materiais para clientes, envia mensagens, conecta ferramentas ou instala agendadores.

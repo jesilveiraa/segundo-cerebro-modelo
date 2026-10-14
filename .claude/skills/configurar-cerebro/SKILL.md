@@ -37,4 +37,11 @@ Só confirmar conclusão depois de comprovar main remota contendo os ajustes. A 
 
 Informar nome e link da base, documentos ajustados, resultado de leitura e salvamento em main e pendências reais. Na rotina, a pessoa começa pelo pedido de trabalho e pede para salvar ao terminar. Detalhes Git ficam com a IA e os mentores.
 
+Ao concluir o preparo ou retomar uma configuração incompleta, mostrar uma conferência curta do entendimento para a pessoa revisar:
+
+- O que está registrado sobre a empresa e as pessoas, com links para os arquivos usados como fonte.
+- O que ainda falta confirmar ou permanece a definir. Não completar lacunas por suposição nem apresentar uma hipótese como fato.
+
+Usar os documentos pertinentes já consultados, sem ler todo o acervo ou consultar todas as ferramentas conectadas. Se não houver informação suficiente, dizer isso. Convidar a pessoa a corrigir o entendimento; uma correção confirmada atualiza sua fonte e segue o mesmo salvamento. Essa conferência não valida sozinha os procedimentos da empresa nem exige nova estrutura de pastas, coleta adicional de informações ou arquivo de tarefas. Não repetir esse diagnóstico a cada salvamento ou início de trabalho comum.
+
 Esta skill não cria repositórios ou convites, altera acessos, conecta ferramentas, publica materiais, envia mensagens ou instala agendadores. Essas ações dependem de pedidos próprios.
