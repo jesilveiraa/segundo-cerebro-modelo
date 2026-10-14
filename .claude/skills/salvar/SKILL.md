@@ -1,45 +1,46 @@
 ---
 name: salvar
-description: Registrar o trabalho da sessão nos arquivos da empresa, acrescentar o log e enviar as alterações à base compartilhada quando a pessoa pedir para salvar, compartilhar ou encerrar o trabalho.
+description: Registrar e revisar o trabalho da sessão e concluir o salvamento na main da base privada quando a pessoa pedir para salvar, compartilhar ou encerrar. Usar também ao concluir configurar-cerebro.
 ---
 
-# Salvar
+# Salvar na base compartilhada
 
-Transforme o trabalho da sessão em registros úteis e compartilhe as alterações pela base configurada. Um pedido claro de salvar, compartilhar ou encerrar autoriza esse envio. O pedido de configurar-cerebro também inclui enviar os ajustes dessa configuração para a base privada já conferida. Se não houve um desses pedidos, registre o que já foi autorizado localmente e não envie por iniciativa própria.
+O resultado é o trabalho revisado, registrado e confirmado em main no GitHub. A pessoa não precisa gerenciar branches ou executar comandos. O pedido de salvar, compartilhar, encerrar ou configurar-cerebro autoriza enviar as alterações desta sessão à base privada conferida, sem autorizar mudanças em outros sistemas.
 
-## Conferir a base e o escopo
+## Conferir base e autoria
 
-Leia AGENTS.md e README.md. Identifique a raiz real com `git rev-parse --show-toplevel` e execute os comandos nela. Confira `git status --short --branch`, `git branch --show-current`, `git remote get-url origin` e eventuais operações incompletas. Não exiba credenciais de configurações.
+Leia README.md, AGENTS.md e CLAUDE.md. Identifique a raiz, origin, branch atual, estado e operações Git incompletas. Compare origin com a base da empresa confirmada na conversa ou no README. HTTPS e SSH podem representar o mesmo repositório. Não expor credenciais.
 
-A base usa main e origin apontando para o repositório próprio da empresa. Não enviar para o modelo público `jesilveiraa/segundo-cerebro-modelo`, outro repositório ou outra branch. Se o destino ou estado não estiver correto, preserve o trabalho e explique a pendência. Não mudar destinos, configurar Git globalmente ou instalar agendadores.
+Não enviar para o modelo público jesilveiraa/segundo-cerebro-modelo, base desconhecida ou destino diferente do confirmado. Na manutenção explícita do modelo, seguir a exceção de AGENTS.md; ela nunca autoriza publicar dados de uma empresa. Não trocar origin para resolver a diferença.
 
-Identifique o conteúdo desta sessão e o que já existia. Revise as diferenças e eventuais versões locais ainda não enviadas. Não incluir alterações ou versões anteriores de origem desconhecida sem esclarecer o escopo. Mudanças alheias continuam preservadas.
+O Cloud pode usar uma branch de sessão. Não exigir checkout de main, nem rejeitar a tarefa só pelo nome da branch. Inspecionar alterações não registradas, conteúdo preparado e commits da branch que ainda não estão em origin/main. A autorização cobre somente o trabalho desta sessão e retomadas explicitamente identificadas. Preservar conteúdo alheio e não incluir commits anteriores de origem desconhecida.
 
-## Atualizar os registros
+Reutilizar quem se identificou na conversa. Se faltar confirmação ou houver ambiguidade, perguntar uma vez antes de atribuir o log. Autoria Git é dado técnico, não prova do nome humano. Se faltar configuração necessária para commit, pedir os dados e configurar somente nesta base; não inventar e-mail.
 
-1. Reutilize a pessoa reconhecida nesta sessão pela conferência de autoria de cerebro, ou a identificação explícita na conversa. Se a autoria ainda não tiver sido conferida, siga somente essa conferência, sem executar de novo toda a atualização. O cadastro local confirmado evita perguntar o nome a cada envio; peça confirmação quando faltar evidência ou a conta mudar. Cite a ferramenta de IA como apoio.
-2. Separe fatos, decisões confirmadas, propostas e pendências. Não converter uma ideia em procedimento validado nem inventar data, responsável ou acesso.
-3. Salve cada informação em sua fonte: identidade da empresa em identidade.md; critérios e procedimentos em processos/; contexto e resultado específico em clientes/<cliente>/. Fontes e conexões gerais ficam no README da raiz; as específicas, no cliente.
-4. Quando criar arquivos, atualize os índices relevantes. Crie cliente somente quando houver contexto real. Preserve fontes históricas e acrescente data e origem das correções.
-5. Acrescente a sessão em LOG.md, com data real, autoria, apoio de IA, trabalho e links, resultado e pendências e fonte. O registro descreve o trabalho; não afirma que o envio aconteceu antes da conferência. Não copiar conversas inteiras, credenciais ou controles de tarefas. Se esta sessão já estiver registrada e não houver trabalho novo, apenas retome o envio, sem duplicar a entrada.
+## Organizar e revisar
 
-## Registrar e compartilhar
+1. Guardar cada informação na sua fonte: identidade em identidade.md, procedimentos em processos, resultados e particularidades no cliente. Atualizar índices quando criar documentos.
+2. Distinguir fatos, decisões, propostas e pendências, com data e fonte. Preservar fontes históricas e não inventar clientes, acessos ou compromissos.
+3. Acrescentar o registro da sessão em LOG.md com autoria, apoio de IA, trabalho e links, resultado, pendências e fonte. Se houver apenas retomada de um envio já registrado, não duplicar a entrada. Não afirmar envio antes de conferir.
+4. Conferir diferenças, arquivos novos e conteúdo preparado, incluindo `git diff --check`. Não incluir credenciais, arquivos pessoais ignorados ou conteúdo fora do escopo. Se houver conteúdo preparado alheio, preservá-lo e separar o escopo antes de commit.
 
-Use o Git disponível, preservando os dados e o histórico:
+## Concluir em main
 
-1. Consulte `git diff`, `git diff --cached`, `git ls-files --others --exclude-standard` e `git diff --check`. Confira também arquivos novos. Não enviar credenciais, conteúdo fora da sessão ou arquivos locais ignorados. CLAUDE.local.md é o cadastro pessoal desta cópia e nunca deve ser enviado, mesmo se estiver indevidamente preparado. A existência de .gitignore não substitui a revisão.
-2. Se houver alterações já preparadas para envio fora do escopo, preserve-as e esclareça como separar o trabalho antes de registrar. Não misturar nem desfazer a preparação de outra pessoa. Para arquivos com trechos de outra sessão, separar os trechos ou esclarecer o escopo antes de incluí-los.
-3. Confira nome e e-mail de autoria Git configurados. Se faltarem, oriente a configuração local da base com dados fornecidos pela pessoa. Essa autoria técnica não determina quem consta no LOG.md.
-4. Prepare apenas os caminhos ou trechos desta sessão. Para arquivos inteiros conferidos, use `git add -- <caminhos>` e revise `git diff --cached`. Não usar inclusão indiscriminada de toda a pasta. Registre com `git commit -m <resumo-do-trabalho>` se houver conteúdo preparado. Se uma tentativa anterior já registrou o trabalho, não criar uma versão vazia.
-5. Receba a situação remota com `git fetch origin` e compare `HEAD...origin/main`. Se falhar, preserve a versão local e informe que ela ainda não foi compartilhada.
-6. Se houver versões só remotas, avance com `git merge --ff-only origin/main`. Se houver versões dos dois lados, confira os conteúdos e combine com `git merge --no-edit origin/main`, somente quando as alterações locais não registradas estiverem preservadas e compatíveis com a operação. Nunca usar envio forçado, reset, limpeza, stash ou rebase para descartar ou ocultar trabalho.
-7. Se a combinação tiver conflitos, leia a base e os dois lados dos arquivos. Preserve todas as entradas independentes do log e os conteúdos compatíveis. Conflitos de significado precisam de confirmação da pessoa; mantenha os dois trabalhos disponíveis enquanto pergunta. Não escolher um lado inteiro para resolver. Adicione somente os arquivos cuja resolução foi conferida e conclua a combinação. Não declarar envio concluído com conflitos pendentes.
-8. Envie com `git push origin main`. Se outra pessoa tiver enviado nesse intervalo e o Git recusar, repita uma vez a consulta e a combinação, conferindo o conteúdo. Uma nova recusa encerra a tentativa: preserve os arquivos e explique a pendência. Falhas de acesso ou rede não exigem insistência.
-9. Consulte a referência remota com `git ls-remote origin refs/heads/main` e compare com `git rev-parse HEAD`. Se for a mesma versão, o envio está confirmado. Se alguém tiver avançado a base depois do envio, receba a referência e confira `git merge-base --is-ancestor HEAD origin/main`: sucesso comprova que sua versão está incluída. Se a conferência falhar, diga que o envio ainda não foi confirmado.
-10. Confira `git status --short --branch` e informe mudanças locais remanescentes. Não declarar a pasta inteira sincronizada se houver trabalho que não foi enviado.
+Execute pelo Git disponível nesta base. Não fixar o nome da branch da sessão no procedimento.
+
+1. Receber `origin` com `git fetch origin`. Confirmar que origin/main existe. Se faltar acesso, referência ou houver operação incompleta, preservar e informar a pendência; não inventar um destino.
+2. Preparar e registrar somente caminhos ou trechos revisados desta sessão. Usar commit quando houver conteúdo novo preparado; não criar commit vazio para comprovar envio. Se uma tentativa anterior já registrou o trabalho, retomar desse estado.
+3. Comparar HEAD com origin/main e revisar diferenças e commits envolvidos. Se HEAD já contiver origin/main, manter. Se estiver somente atrás, avançar sem reescrever histórico. Se houver versões de ambos os lados, combinar origin/main na branch atual com merge, preservando os dois trabalhos. Não usar rebase, reset, stash, limpeza ou força para descartar ou ocultar alterações.
+4. Em conflito, ler a base e os dois lados. Preservar entradas independentes do log e conteúdo compatível. Só concluir a combinação quando o significado estiver claro; uma decisão sem evidência exige confirmação. Não escolher um lado inteiro automaticamente nem declarar salvamento com conflito pendente.
+5. Conferir que o histórico pronto para envio contém a main recebida e somente alterações conhecidas e autorizadas além dela. Enviar a versão da sessão com `git push origin HEAD:main`. Não usar `git push origin main` quando a branch local main estiver desatualizada: esse comando pode enviar outra versão, em vez do trabalho da sessão.
+6. Se outra pessoa avançou main e o envio for recusado por concorrência, receber e combinar novamente, rever o resultado e tentar uma vez. Uma nova recusa, falha de acesso ou proteção de main encerra a tentativa. Não alterar regras, permissões ou forçar o envio. Se a base exigir PR, preservar e explicar o que falta para concluir a integração; PR aberto sozinho não é main atualizada.
+7. Após o envio, conferir main remota. Comparar a versão enviada com `git ls-remote origin refs/heads/main`. Se main avançou novamente, fazer fetch e conferir `git merge-base --is-ancestor <versao-enviada> origin/main`: sucesso comprova inclusão do trabalho. Se a consulta falhar ou não comprovar inclusão, informar confirmação pendente.
+8. Conferir o estado restante. Se houver mudanças ou commits fora do que foi enviado, informar o que permanece pendente; não chamar toda a sessão de salva.
 
 ## Resposta
 
-Informe quais documentos e log foram atualizados, o resultado da conferência de envio e as pendências. Use linguagem simples: “Salvei os registros e confirmei o envio. A outra pessoa pode recebê-los com cerebro.” Se não conseguiu enviar: “Os arquivos estão preservados neste computador; o compartilhamento ficou pendente por...”
+Dizer o que foi registrado, onde está e se main contém o trabalho. Exemplo, somente com comprovação: “Salvei o processo e o log na base compartilhada. A outra pessoa já pode consultar a versão atualizada.”
 
-Esta rotina não publica material para clientes, altera sistemas externos, cria repositórios nem compartilha acessos. Essas ações dependem de pedidos próprios.
+Se não concluiu: “Os arquivos estão preservados na sessão. Ainda falta concluir o salvamento na base compartilhada por [motivo e próximo passo].” Não chamar uma branch enviada ou PR aberto de salvamento concluído.
+
+Esta rotina não cria repositórios ou convites, publica materiais para clientes, envia mensagens, conecta ferramentas ou instala agendadores.

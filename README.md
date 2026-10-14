@@ -1,23 +1,94 @@
 # Segundo cérebro da empresa
 
-Uma base em arquivos para guardar contexto, processos e conhecimento do trabalho. O Claude Code consulta e atualiza esses arquivos; o GitHub guarda as versões compartilhadas.
+Uma base em arquivos para guardar contexto, processos e conhecimento do trabalho. O Claude Code consulta e atualiza esses arquivos; o GitHub guarda a versão compartilhada e o histórico.
 
-Este é um **modelo público da LÍNIA Consultoria**. O prompt inicial orienta o Claude a criar uma base privada própria antes de trabalhar. As pessoas da mesma empresa usam essa mesma base, cada uma com sua conta e sua pasta no computador.
+Este é um **modelo público da LÍNIA Consultoria**. A empresa usa uma base própria, privada, criada a partir dele. Cada pessoa acessa essa mesma base com sua conta, pelo Claude Code em **Cloud**. Não é necessário clonar uma pasta no computador.
 
 ## Por onde começar
 
-| Sua situação | Comece aqui |
+| Sua situação | Próximo passo |
 |---|---|
-| A empresa ainda não tem uma base | Use o primeiro prompt. O Claude cria a base, convida a outra pessoa e prepara sua pasta. |
-| Outra pessoa já criou a base da empresa | Aceite o convite e use o segundo prompt com o link recebido. |
-| A base já está configurada neste computador | Use cerebro, trabalhe e use salvar. |
+| A empresa ainda não tem uma base | Criar a base privada no GitHub a partir deste modelo e definir os convites. |
+| A base já existe | Aceitar o convite, conectar GitHub ao Claude Code e selecionar a mesma base em Cloud. |
+| A base está preparada | Dizer o que quer fazer. Ao terminar, pedir para salvar. |
 
-Antes da cópia, abra o Claude no modo **Code**, em ambiente local, e entre com uma conta que tenha acesso ao Code. Se aparecer um pedido de login ou de plano, resolva esse acesso antes de colar o prompt. Os mentores podem acompanhar essa primeira preparação.
+## 1. Preparar os acessos
+
+Cada pessoa usa sua conta GitHub e sua conta Claude com acesso ao Code. [Baixar Claude Desktop](https://claude.com/download) ou abrir [claude.ai/code](https://claude.ai/code). No desktop, escolher Cloud na aba Code.
+
+Conectar o GitHub pelo próprio Claude e autorizar a base privada escolhida. Login e telas de autorização são concluídos pela pessoa. Uma conexão GitHub pelo Composio não substitui esse acesso do Claude Code ao repositório.
+
+## 2. Criar uma única base privada
+
+A primeira pessoa pode abrir este modelo no GitHub e escolher **Use this template > Create a new repository**. Definir a conta proprietária, o nome da base e a opção **Private**. Conferir a privacidade antes de preencher informações da empresa. Os mentores podem apoiar essa preparação.
+
+Convidar a outra participante pelo GitHub, com acesso de escrita definido para o trabalho conjunto. Compartilhar a base também com os mentores quando combinado, para implementar skills de apoio e ajudar nas dúvidas. Cada pessoa aceita seu convite com a própria conta. Não compartilhar senhas.
+
+A segunda pessoa usa a base já criada. Não cria outro repositório a partir do modelo. O repositório interno dos mentores é separado e não é entregue às participantes.
+
+Criação e convites são etapas próprias, com destinatários e permissões definidos. As skills deste modelo não criam repositórios ou convites automaticamente.
+
+## 3. Abrir e preparar no Cloud
+
+Selecionar a base privada e **main** como versão de partida no Claude Code. A sessão prepara os arquivos no ambiente remoto. O Cloud pode criar uma branch interna de trabalho; a rotina de salvar leva o resultado para main.
+
+### Primeiro preparo
+
+Na base já selecionada, preencher e enviar:
+
+```text
+Quero preparar o segundo cérebro da minha empresa nesta base privada.
+
+Base da empresa: <LINK_DA_BASE_PRIVADA>
+Nome para o log: <COMO_QUERO_SER_IDENTIFICADA>
+
+Leia o README, o CLAUDE.md e as regras da base. Siga configurar-cerebro.
+Confira a base e a privacidade. Pergunte somente o que faltar sobre a
+empresa e aproveite o que já estiver preenchido. Ao concluir, salve os
+ajustes em main e confira o resultado na base compartilhada.
+Não crie outro repositório, convites ou uma pasta no meu computador.
+```
+
+A skill configurar-cerebro confere o destino e o acesso, preenche identidade e mapas com informações reais e usa salvar para concluir em main. Se houver bloqueio de acesso ou conflito, preserva os arquivos e explica a pendência.
+
+### Outra pessoa na mesma base
+
+Depois de aceitar o convite e selecionar a mesma base, pode dizer:
+
+```text
+Quero trabalhar nesta base privada da empresa.
+
+Base da empresa: <LINK_DA_BASE_PRIVADA>
+Nome para o log: <COMO_QUERO_SER_IDENTIFICADA>
+
+Leia as instruções e confira a versão atual de main. Aproveite a
+identidade e os registros existentes. Quero trabalhar em: <ASSUNTO>.
+```
+
+Não há cadastro obrigatório no computador. Uma identificação confirmada vale para a sessão; se faltar evidência em uma sessão nova, a IA pode perguntar uma vez quem está trabalhando.
+
+## 4. Usar no dia a dia
+
+1. Abrir a base no Claude Code em Cloud, partindo de main.
+2. Dizer o que quer fazer. O CLAUDE.md orienta atualizar a base e ler o contexto necessário, sem comando de início.
+3. Trabalhar e conferir os arquivos utilizados como fonte.
+4. Pedir “salve meu trabalho” ou usar `/salvar`.
+5. Conferir a resposta: o trabalho deve estar em main, disponível para a outra pessoa.
+
+Salvar registra os documentos e o log, recebe atualizações da outra pessoa, combina os trabalhos e confirma o resultado remoto. Enviar uma branch ou abrir um PR não é, sozinho, conclusão desse salvamento.
+
+Se houver conflito ou acesso insuficiente, a IA preserva o resultado e informa o que falta. Nunca força o envio para sobrescrever o trabalho da outra pessoa. Uma sessão já aberta também precisa conferir atualizações antes de continuar; não é necessário ensinar comandos Git às participantes.
+
+## 5. Conferir a troca
+
+Uma pessoa salva uma informação real. A outra abre uma sessão na main atualizada e pede para localizar o registro. Fazer o caminho de volta. Isso confere o acesso e a recuperação, sem exigir cópias locais nos computadores.
+
+Ainda é necessário testar esse comportamento no Claude Cloud e com as contas que usarão a base. O arquivo de uma skill e a documentação do ambiente não comprovam sua execução.
 
 ## Estrutura
 
 ```text
-empresa-OS/
+base-da-empresa/
   README.md
   identidade.md
   AGENTS.md
@@ -32,133 +103,39 @@ empresa-OS/
     skills/
       configurar-cerebro/
         SKILL.md
-      cerebro/
-        SKILL.md
       salvar/
         SKILL.md
 ```
 
-Um cliente real ganha `clientes/<nome-do-cliente>/README.md` quando houver conteúdo. Não há clientes de exemplo para serem confundidos com clientes reais.
-
 | Local | O que guardar |
 |---|---|
 | [identidade.md](identidade.md) | Quem é a empresa e como decide, escreve e trabalha. |
-| [clientes/](clientes/README.md) | Contexto, fontes e particularidades de cada cliente. |
-| [processos/](processos/README.md) | Como o trabalho é feito, com critérios, fontes e estágio de validação. |
-| [LOG.md](LOG.md) | Registro das sessões: data, autoria, trabalho, resultado e pendências. |
-| [AGENTS.md](AGENTS.md) | Orientações gerais para a IA. O CLAUDE.md importa essas regras. |
-| [.claude/skills/](.claude/skills/configurar-cerebro/SKILL.md) | Configurar a base com configurar-cerebro; receber com cerebro; registrar e compartilhar com salvar. |
+| [clientes/](clientes/README.md) | Contexto, fontes e particularidades de clientes reais. |
+| [processos/](processos/README.md) | Procedimentos e critérios, com fonte e estágio. |
+| [LOG.md](LOG.md) | Data, autoria, trabalho, resultado e pendências de cada sessão. |
+| [CLAUDE.md](CLAUDE.md) | Início automático, leitura de contexto e conferência da base. Importa as regras gerais. |
+| [AGENTS.md](AGENTS.md) | Onde guardar, como revisar, registrar e preservar o trabalho. |
+| [.claude/skills/configurar-cerebro/](.claude/skills/configurar-cerebro/SKILL.md) | Preparar ou retomar a base privada. |
+| [.claude/skills/salvar/](.claude/skills/salvar/SKILL.md) | Registrar e concluir o salvamento em main. |
 
-## 1. Preparar os acessos
-
-Cada pessoa cria sua própria conta no [GitHub](https://github.com/signup). Abra o Claude no modo Code em ambiente local. O Claude orienta o acesso ao GitHub quando necessário; entrar na conta e responder às telas de autorização ainda depende da pessoa.
-
-A empresa usa uma única base. Uma pessoa inicia a criação; a outra aceita o convite e utiliza essa mesma base. A primeira informa o **usuário GitHub** da outra, que aparece no perfil dela. Não é necessário compartilhar senhas.
-
-## 2. Primeira pessoa: criar e preparar a base
-
-Preencha os dois campos abaixo. O nome será usado na base do GitHub e na pasta local, por exemplo `empresa-os`.
-
-### Prompt para criar a base
-
-```text
-Quero preparar o segundo cérebro da minha empresa neste computador.
-
-Nome da base: <NOME_DA_EMPRESA-os>
-Usuário GitHub da pessoa que vai trabalhar comigo: <USUARIO_GITHUB>
-
-Confira o acesso local, o Git e o GitHub. Se faltar algo, me guie pelo
-fluxo oficial de instalação e login, sem pedir senha ou token nesta conversa.
-Confira a conta GitHub autenticada e use essa conta como proprietária.
-Crie uma base PRIVADA a partir deste modelo:
-https://github.com/jesilveiraa/segundo-cerebro-modelo
-Se já existir uma base com esse nome, confira comigo antes de reutilizar.
-Confira o perfil do usuário indicado e convide somente essa pessoa,
-com permissão de escrita. Preserve permissões existentes e não duplique convites.
-Confira o resultado e me diga se o convite está pendente de aceite.
-Espere os arquivos do modelo ficarem disponíveis antes de copiar a base.
-Copie a base para uma pasta local fora de OneDrive, iCloud e Dropbox.
-Preserve arquivos existentes e não altere outros projetos ou acessos.
-Leia o README e as instruções da pasta criada. Leia e siga
-.claude/skills/configurar-cerebro/SKILL.md para concluir a preparação.
-Confirme uma vez meu nome para o log e vincule-o à minha conta GitHub,
-em um cadastro local que não seja enviado para a outra pessoa.
-Ao terminar, diga qual pasta abrir no Claude Code e entregue o link
-que a outra pessoa deve usar. Informe o que foi conferido e o que falta.
-```
-
-O prompt autoriza criar essa base privada e enviar esse convite. O convite precisa ser aceito pela pessoa convidada. A IA deve conferir privacidade, destino e resultado antes de afirmar que os acessos estão prontos.
-
-Se for necessário abrir uma nova sessão na pasta criada, a IA entrega `/configurar-cerebro` pronto para copiar e retoma o que já foi feito. Você não precisa reconstruir os dados da configuração.
-
-## 3. Segunda pessoa: usar a base já criada
-
-Aceite o convite com sua conta GitHub. Depois abra o Claude Code local e cole o prompt abaixo, preenchendo somente o link que a primeira pessoa recebeu.
-
-### Prompt para copiar a base
-
-```text
-Quero usar o segundo cérebro da minha empresa neste computador.
-
-Repositório da empresa: <LINK_DA_BASE_PRIVADA_DA_EMPRESA>
-
-Confira o acesso local, o Git e o GitHub. Se faltar algo, me guie pelo
-fluxo oficial de instalação e login, sem pedir senha ou token nesta conversa.
-Use minha própria conta GitHub e confira o acesso à base indicada.
-Se o convite ainda não foi aceito, me oriente a aceitá-lo.
-Copie essa mesma base para uma pasta local fora de OneDrive, iCloud e Dropbox.
-Preserve arquivos existentes; reutilize a pasta se já for essa base.
-Não crie outro repositório nem envie novos convites.
-Leia o README e as instruções da pasta criada. Leia e siga
-.claude/skills/configurar-cerebro/SKILL.md para concluir a preparação.
-Confirme uma vez meu nome para o log e vincule-o à minha conta GitHub,
-em um cadastro local que não seja enviado para a outra pessoa.
-Aproveite a identidade e os registros já preenchidos, sem substituí-los.
-Ao terminar, diga qual pasta abrir no Claude Code, o que foi conferido
-sobre recebimento e envio e qualquer pendência.
-```
-
-Configurar-cerebro confere a base privada, prepara o cadastro da pessoa neste computador, pergunta o que faltar sobre a empresa, ajusta os documentos e registra a sessão no LOG.md. Usa cerebro e salvar para conferir recebimento e envio. A criação da base e o convite ficam no primeiro prompt; a skill trabalha na base já copiada.
-
-O cadastro da pessoa fica em `CLAUDE.local.md`, que acompanha somente esta pasta no computador e é ignorado pelo Git. Não guarda senhas. Cada pessoa configura seu próprio cadastro. A identidade da empresa e o log do trabalho ficam na base compartilhada.
-
-Uma base gerada tem vida própria. Melhorias futuras no modelo não substituem automaticamente os arquivos da empresa.
-
-## 4. Conferir a troca entre as duas
-
-Uma pessoa registra uma informação real e usa salvar. A outra usa cerebro e mostra a informação recebida. Depois fazem o caminho de volta. A configuração de uma pasta só comprova o acesso daquele computador.
-
-## 5. Usar no dia a dia
-
-1. Abra a pasta da empresa no Claude Code.
-2. Ao começar, use `/cerebro` e diga o assunto. Exemplo: `/cerebro vamos registrar como preparamos reuniões`.
-3. Trabalhe com a IA e confira os arquivos usados como fonte.
-4. Ao terminar, use `/salvar` e confira se o envio foi confirmado.
-
-Depois da configuração, não precisa dizer seu nome em cada sessão. A IA usa o cadastro confirmado desta cópia e confere a conta GitHub disponível. Se a conta mudar, faltar o cadastro ou outra pessoa estiver usando o computador, confirma a autoria antes de registrar o trabalho.
-
-- **configurar-cerebro:** prepara a base neste computador ou retoma uma configuração incompleta.
-- **cerebro:** recebe atualizações, reconhece a pessoa cadastrada e lê o contexto relevante.
-- **salvar:** atualiza os documentos e o log e compartilha o trabalho.
-
-Salvar no computador não garante que o conteúdo chegou à outra pessoa. Se faltar internet ou acesso, a IA informa o que ficou local. Se houver mudanças incompatíveis, compara os conteúdos e pede ajuda quando existir uma decisão de significado em aberto.
-
-Se precisar de ajuda, copie: “Confira o que falta para receber ou salvar as atualizações. Preserve meus arquivos e explique o próximo passo em linguagem simples.”
+As skills de tarefas reais podem ser acrescentadas conforme o uso. Consultam processos e contexto sem manter cópias concorrentes dos critérios.
 
 ## Fontes e conexões da empresa
 
-Preencher com as fontes realmente escolhidas. Não guardar credenciais.
+Preencher somente com fontes escolhidas e acessos reais. Não guardar credenciais.
 
 | Fonte ou ferramenta | O que contém | Link ou localização | Acesso e teste |
 |---|---|---|---|
 | A definir | A definir | A definir | Não configurado |
 
-Tarefas atuais, agenda, bases operacionais e gravações continuam no sistema de origem. Registrar aqui o link e o papel de cada fonte. Fontes específicas de um cliente ficam no README dele.
+Tarefas atuais, agenda, planilhas operacionais e gravações continuam no sistema de origem. Registrar o link e o papel de cada fonte. Fontes de um cliente ficam no README dele.
 
-As conexões com ferramentas são feitas pelos **Conectores** do próprio Claude. Cada pessoa usa seu acesso e confere a consulta no ambiente em que trabalha. Conectar uma ferramenta não agenda uma automação.
+As outras ferramentas podem conectar pelo Composio remoto no Claude. Cada pessoa autoriza seu acesso e confere uma consulta na sessão Cloud. Compartilhar arquivos não compartilha automaticamente as conexões. Conectar uma ferramenta não agenda uma automação.
 
 ## Sobre este modelo
 
-Versão inicial de 11/10/2026, criada para a mentoria de segundo cérebro e IA da LÍNIA. As rotinas devem ser verificadas nos computadores das pessoas que vão utilizá-las. Não instalam agendadores nem enviam mensagens ou publicam materiais para clientes.
+Criado em 11/10/2026 para a mentoria de segundo cérebro e IA da LÍNIA. Revisado em 14/10/2026: início pelas instruções, preparação no Cloud e salvamento com destino main. A [manutenção no log](LOG.md#manutenção-do-modelo) registra a origem e os limites de teste; não é histórico de uma empresa.
 
-Referências: [criação pelo GitHub CLI](https://cli.github.com/manual/gh_repo_create), [convite de colaboração](https://docs.github.com/en/rest/collaborators/collaborators#add-a-repository-collaborator), [autenticação](https://cli.github.com/manual/gh_auth_login), [instruções locais do Claude](https://code.claude.com/docs/en/memory), [modelo no GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template), [cópia local](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository), [Claude Code local](https://code.claude.com/docs/en/desktop), [skills do Claude Code](https://code.claude.com/docs/en/skills) e [Conectores](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities).
+Uma base gerada tem vida própria. Revisões futuras deste modelo não atualizam automaticamente a base da empresa; revisar a adaptação preservando seu conteúdo.
+
+**Fontes técnicas, consultadas em 14/10/2026:** [início no Cloud](https://code.claude.com/docs/en/web-quickstart), [ambiente e proxy GitHub](https://code.claude.com/docs/en/cloud-environments#github-proxy), [instruções do Claude](https://code.claude.com/docs/en/memory), [skills no Cloud](https://code.claude.com/docs/en/skills#use-skills-in-cowork-and-cloud-sessions), [criar a partir de modelo](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) e [Composio remoto](https://composio.dev/toolkits/composio/framework/claude-cowork).

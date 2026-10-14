@@ -1,88 +1,40 @@
 ---
 name: configurar-cerebro
-description: Configurar o segundo cérebro da empresa no computador depois da cópia inicial, conferindo pasta, acesso ao GitHub, destino de sincronização, identidade, log e recebimento e envio. Usar também para retomar uma configuração incompleta ou preparar o segundo computador.
+description: Preparar ou retomar a base privada da empresa no Claude Code em Cloud, conferindo repositório, acesso, identidade, mapas e log e concluindo os ajustes em main.
 ---
 
-# Configurar cérebro
+# Preparar a base da empresa
 
-Prepare uma base já copiada para o computador. O pedido de configurar inclui registrar e compartilhar os ajustes desta sessão na base privada da empresa, depois de conferir o destino. Use as rotinas [cerebro](../cerebro/SKILL.md) e [salvar](../salvar/SKILL.md) para receber e enviar; elas consultam origin e não precisam de um endereço fixo por empresa.
+A base privada já precisa existir e estar selecionada no Claude Code em Cloud. O pedido de configuração autoriza registrar e salvar os ajustes desta sessão em main, seguindo [salvar](../salvar/SKILL.md). Não exige clone no computador, cadastro pessoal persistente ou skill de início.
 
-Conduza a preparação para uma pessoa que está começando. Faça as conferências e os comandos pelo acesso disponível, sem transferir uma lista de comandos técnicos para ela. Reutilize nome, link e respostas já dados; reúna as perguntas que faltarem sobre a identidade. Explique uma pendência com o próximo passo concreto. Detalhes de Git ficam nos arquivos e só entram na resposta quando ajudam a resolver o problema.
+## Conferir ambiente e acesso
 
-## 1. Conferir a pasta e a base
+Leia README.md, AGENTS.md, CLAUDE.md, identidade.md e os registros pertinentes de LOG.md. Siga o início de CLAUDE.md para conferir a base, receber main e identificar a pessoa. Reutilize nome, link e respostas já fornecidos.
 
-Leia [README.md](../../../README.md), [AGENTS.md](../../../AGENTS.md), [CLAUDE.md](../../../CLAUDE.md), [identidade.md](../../../identidade.md) e os registros recentes de [LOG.md](../../../LOG.md).
+Origin deve corresponder à base própria da empresa confirmada. A branch de sessão Cloud é permitida; main é o destino final. Não renomear a branch nem trocar origin automaticamente. Se estiver no modelo público, explicar que ele é referência e orientar selecionar a base privada antes de preencher informações da empresa. Não criar outra base como efeito desta skill.
 
-Confira acesso local a arquivos, execução de comandos e Git. Identifique a raiz com `git rev-parse --show-toplevel`; execute os comandos somente nessa base. Confira `git status --short --branch`, `git branch --show-current`, `git remote get-url origin` e operações Git incompletas. Preserve alterações e versões locais anteriores; não misture trabalhos de origem desconhecida.
+Confira privacidade e permissão de leitura pelo GitHub disponível. No Cloud, pode usar a ferramenta GitHub ou a API REST: `gh api repos/<proprietario>/<repositorio>` e os campos `full_name`, `private` e permissões disponíveis. Não depender de comandos gh que exigem GraphQL. Se a consulta falhar, não concluir que todo acesso Git falhou. Pedir conferência de Private na interface, se necessária, e registrar a fonte da confirmação. Sem privacidade confirmada, não registrar nem enviar dados de empresa.
 
-Se a base ainda não foi copiada, siga o prompt inicial do README antes de retomar. Não inicialize um repositório dentro de outra base nem trate uma pasta agregadora como repositório.
+A autenticação do Claude, Git e uma ferramenta GitHub pode ser diferente. Orientar login oficial, seleção da base ou aceite de convite quando faltar acesso. Não pedir credenciais, instalar Git no computador, criar CLAUDE.local.md ou prometer identificação permanente entre sessões. A pessoa pode precisar confirmar seu nome em uma sessão nova.
 
-Compare origin com o link da empresa fornecido na conversa ou já confirmado no README. Endereços HTTPS e SSH podem representar o mesmo proprietário e repositório. Não exiba credenciais caso estejam indevidamente incluídas em uma URL. Se só houver origin, apresente o proprietário e o nome da base e peça confirmação de que é a base da empresa. A confirmação existente nesta sessão pode ser reutilizada.
+## Preencher com informações reais
 
-O destino deve ser o repositório próprio da empresa, na branch main. Se for `jesilveiraa/segundo-cerebro-modelo`, outro destino ou outra branch, pare antes de editar ou enviar e explique a pendência. Uma diferença não autoriza mudar origin, renomear pastas ou alterar o histórico de outra base.
+Reutilizar o que já estiver preenchido. Perguntar somente o que faltar: nome da empresa, o que faz e para quem, pessoas e papéis. Critérios e tom podem continuar a definir. Uma segunda participante usa a mesma base e preserva os registros existentes.
 
-Confira que a base é privada. Use o GitHub CLI ou uma ferramenta GitHub disponível, se houver, ou peça que a pessoa confira **Private** na página da base. Com GitHub CLI, `gh repo view <proprietario>/<repositorio> --json nameWithOwner,url,visibility` permite consultar a visibilidade. A autenticação do CLI pode diferir daquela usada pelo Git. Se a consulta falhar, não conclua que o acesso do Git também falhou. Se estiver pública ou a visibilidade não puder ser confirmada, não envie informações da empresa; explique como conferir ou ajustar no GitHub antes de continuar.
+Atualizar identidade.md com fonte, data e pendências. Ajustar README para apresentar a empresa, incluir o link da base privada, privacidade conferida e fontes escolhidas. Preservar a referência ao modelo e distinguir sua URL do destino de trabalho. A árvore representa a organização no repositório, não um caminho obrigatório no computador.
 
-## 2. Conferir o acesso deste computador
+Não duplicar critérios nas skills nem fixar o endereço da empresa dentro de salvar. Não criar clientes, reuniões ou processos fictícios. Não manter no guia da empresa instruções de clone ou chamadas à skill de início retirada. Se a base veio de versão antiga do modelo, revisar suas instruções antes de declarar a configuração pronta, preservando alterações reais da empresa. Não apagar arquivos pessoais anteriores como efeito dessa revisão.
 
-Cada pessoa usa sua própria conta e seu próprio acesso à mesma base. Confira o usuário GitHub autenticado com `gh api user --jq .login`, quando o CLI estiver disponível, ou pela ferramenta GitHub autenticada. Essa consulta identifica a conta, não confirma por si só o nome humano para o log.
+## Registrar, salvar e conferir
 
-Leia CLAUDE.local.md se existir. Preserve qualquer instrução local anterior. Se já houver um cadastro confirmado para esta base e a mesma conta, reutilize-o. Na primeira configuração, confirme uma vez como a pessoa quer ser identificada no log, aproveitando o nome já fornecido na conversa. Se a conta não puder ser identificada, peça o usuário GitHub confirmado pela pessoa e registre a origem dessa informação. Não invente uma associação entre conta e nome.
+Registrar no LOG.md o trabalho real da configuração, autoria humana, IA como apoio, fontes e pendências. Na base gerada, o histórico de manutenção do modelo não é uma sessão da empresa; preservar e distinguir os registros.
 
-Acrescente ou atualize somente a seção **Pessoa desta cópia** em CLAUDE.local.md, com nome confirmado, usuário GitHub, proprietário/repositório, data e fonte da confirmação. Não guardar credenciais, e-mail pessoal ou dados do computador nesse cadastro. Use este formato:
+Usar salvar para revisar e enviar somente estes ajustes à main da base privada conferida. Se não houver alteração real nem envio anterior pendente, não fabricar arquivo ou commit de teste: informar que esta execução não testou nova escrita.
 
-```markdown
-## Pessoa desta cópia
+Só confirmar conclusão depois de comprovar main remota contendo os ajustes. A configuração desta sessão não comprova o acesso de outra pessoa ou a disponibilidade dos conectores. O teste de troca exige outra sessão encontrando uma informação real na main atualizada.
 
-- Nome para o log: <nome confirmado>
-- Conta GitHub: <usuario>
-- Base: <proprietario/repositorio>
-- Confirmação: <AAAA-MM-DD e fonte>
-```
+## Entregar
 
-Confira `git check-ignore -- CLAUDE.local.md` e o estado Git. O modelo já ignora esse arquivo. Se não estiver ignorado ou já estiver rastreado, não o publique: confira o conteúdo e corrija a situação sem desfazer mudanças alheias. Uma atualização de .gitignore, se necessária e autorizada nesta configuração, é compartilhável; o cadastro pessoal continua local. Não criar esse arquivo preenchido no modelo público.
+Informar nome e link da base, documentos ajustados, resultado de leitura e salvamento em main e pendências reais. Na rotina, a pessoa começa pelo pedido de trabalho e pede para salvar ao terminar. Detalhes Git ficam com a IA e os mentores.
 
-Confira a autenticação pelo fluxo oficial do GitHub disponível neste computador. Se faltar acesso, oriente as telas de login ou aceite do convite. Não peça senha, token ou arquivo de credenciais na conversa. Não crie contas, repositórios ou convites como parte desta rotina. Não instale ferramentas, altere configurações globais ou troque outras contas silenciosamente; explique a necessidade e siga o caminho escolhido pela pessoa.
-
-Confira a autoria Git efetiva com `git var GIT_AUTHOR_IDENT`. Se nome ou e-mail estiverem ausentes ou a pessoa precisar usar outros nesta base, obtenha os dados dela e use somente `git config --local user.name <nome>` e `git config --local user.email <email>`. Pode usar o e-mail de privacidade fornecido pelo GitHub. Não adivinhe o e-mail nem use esses dados para determinar a autoria do LOG.md.
-
-Execute cerebro para receber as atualizações antes de editar. Leia novamente os documentos se tiverem mudado. Se houver falha de acesso, conflito ou estado divergente que impeça continuar, preserve os arquivos e siga a orientação dessa rotina. Não declare recebimento comprovado sem consulta remota bem-sucedida.
-
-## 3. Personalizar com informações reais
-
-Reutilize a identidade e as fontes já preenchidas. No segundo computador, preserve a identidade compartilhada e os registros da outra pessoa. Pergunte apenas o que faltar: nome da empresa, o que faz e para quem, nome e papel de quem trabalha. Princípios, tom e forma de trabalhar podem continuar como `a definir` até serem discutidos.
-
-Atualize identidade.md somente com respostas ou fontes confirmadas. Indique data, origem e o que ainda falta validar. Não cadastre clientes fictícios nem trate a configuração como validação de processos.
-
-No README da base da empresa:
-
-- Substitua a apresentação de modelo público por uma apresentação da empresa, usando seu nome confirmado. Se ainda faltar, mantenha uma apresentação genérica de base da empresa.
-- Acrescente ou atualize uma seção **Base da empresa**, com o link confirmado do repositório próprio, a visibilidade conferida, data e fonte. Não registre senhas, tokens ou caminhos pessoais dos computadores.
-- Ajuste o nome da pasta na árvore para o nome real da pasta local. Os nomes locais podem variar entre computadores; preserve o nome já documentado se a diferença for apenas local.
-- Preserve o guia, o prompt inicial, os links de origem do modelo e as fontes e conexões já existentes. Diferencie os links de referência ao modelo do destino de sincronização da empresa.
-
-Não reescreva as skills cerebro e salvar para fixar nome, caminho ou link da empresa. O clone já cria a pasta de destino e configura origin; a configuração verifica esse resultado. Não renomeie o modelo público nem crie uma segunda base para a mesma empresa.
-
-## 4. Registrar e testar a sincronização
-
-Registre a sessão em LOG.md com data real, autoria humana, Claude Code como apoio, ajustes e documentos, fonte e pendências. Descreva separadamente o acesso recebido e o envio ainda a conferir. Preserve as entradas existentes. Se esta sessão já estiver registrada e não houver trabalho novo, retome a conferência sem duplicá-la.
-
-Se a sessão veio do primeiro prompt, registre também o link da base criada e o resultado real do convite, distinguindo convite enviado de acesso aceito. Reutilize a evidência da criação; não envie convites adicionais como efeito da configuração.
-
-Execute salvar para revisar e enviar somente os ajustes desta sessão. O registro real da configuração é suficiente para testar a escrita; não crie arquivos de teste, versões vazias ou alterações artificiais. Se houver apenas pendências de um envio anterior, retome esse envio conforme salvar. Se não houver nada novo a enviar nem envio anterior pendente, informe que esta execução não testou uma nova escrita.
-
-Confirme o envio pela conferência remota prevista em salvar. Se falhar, informe o que ficou local. Não escreva no log que o envio foi confirmado antes dessa conferência nem crie um ciclo de novas versões apenas para registrar cada envio.
-
-O teste deste computador não comprova a troca entre duas pessoas. Oriente a demonstração prevista no README: uma salva uma alteração real; a outra recebe com cerebro e mostra o conteúdo; depois fazem o caminho de volta. Registre essa troca como pendente até existir evidência.
-
-## 5. Entregar o resultado
-
-Informe a pasta que deve ficar aberta, o nome e link da base compartilhada, os documentos ajustados e os resultados separados: leitura recebida, escrita enviada e troca entre computadores. Cite as pendências reais de acesso ou identidade.
-
-Prefira uma resposta curta: “A base está preparada nesta pasta. Recebimento e envio conferidos. Falta testar a troca com a outra pessoa.” Só afirme os resultados comprovados; nomeie a pendência quando algum deles falhar.
-
-Mostre a rotina: `/cerebro` ao começar e `/salvar` ao terminar. Configurar-cerebro é usado na preparação ou quando houver necessidade de retomar ajustes, não em toda sessão.
-
-Informe que o nome foi vinculado à conta no cadastro local e não precisa ser repetido em toda sessão. Se esse cadastro estiver pendente, explique o que falta.
-
-Se a skill não aparecer no Claude Code, oriente abrir uma nova sessão na pasta clonada. Como alternativa, leia este SKILL.md e siga a rotina diretamente. Esta configuração não instala agendadores, conecta ferramentas externas, publica materiais ou compartilha acessos.
+Esta skill não cria repositórios ou convites, altera acessos, conecta ferramentas, publica materiais, envia mensagens ou instala agendadores. Essas ações dependem de pedidos próprios.
