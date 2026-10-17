@@ -42,3 +42,11 @@ Registro da manutenção da estrutura pública, separado das sessões da empresa
 - **Resultado:** instruções ajustadas sem mudar a organização da base ou o fluxo de conclusão em main. Não criado arquivo de pendências ou controle de tarefas. Não incluídos dados de empresa ou cliente. Formato e coerência dos arquivos conferidos; não executado novo ensaio de recuperação.
 - **Pendências:** aplicação das novas orientações no Claude Cloud não comprovada. A conferência do entendimento não equivale a validar procedimentos da empresa. Uma possível lista de pendências exige estudo, teste e pedido de implementação próprios.
 - **Fonte:** revisão de Jéssica nesta conversa em 14/10/2026 e confirmação de configurar-cerebro como skill de preparação da base. Esta é manutenção do modelo, não sessão de uma empresa.
+
+### 17/10/2026: contexto por áreas e mapa dos processos
+
+- **Quem trabalhou:** Jéssica, com apoio do Codex.
+- **Trabalho:** identidade movida para [contexto-da-empresa/identidade.md](contexto-da-empresa/identidade.md), junto dos pontos de partida de ofertas, clientes e mercado, pessoas e comunicação. Entrada de processos renomeada para [mapa-dos-processos.md](processos/mapa-dos-processos.md), com jornada, back office e rotinas em nível macro. Alinhados README, CLAUDE e caminhos das duas skills.
+- **Resultado:** [AGENTS.md](AGENTS.md) atribui à IA a organização, a referência principal, o registro de fontes e datas disponíveis e a atualização com preservação do histórico. As pessoas fornecem materiais, esclarecem lacunas e revisam. Preenchimento gradual e criação de arquivos adicionais só com conteúdo e necessidade. Modelo permanece genérico, sem dados de empresa ou cliente.
+- **Conferência e limites:** links locais, caminhos e diferenças revisados; formato das duas skills aprovado pelo validador. Não executado novo ensaio de uso no Claude Cloud. Bases privadas já criadas não foram alteradas nem recebem esta revisão automaticamente.
+- **Fonte:** pedido explícito de Jéssica em 17/10/2026 para revisar a organização e as instruções do modelo, a partir dos comentários no material de apoio da aula Contexto da empresa. Registro de manutenção separado das sessões de uma empresa.

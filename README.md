@@ -94,7 +94,12 @@ Ainda é necessário testar esse comportamento no Claude Cloud e com as contas q
 ```text
 base-da-empresa/
   README.md
-  identidade.md
+  contexto-da-empresa/
+    identidade.md
+    produtos-servicos-e-entregas.md
+    clientes-e-mercado.md
+    pessoas.md
+    comunicacao-e-referencias.md
   AGENTS.md
   CLAUDE.md
   LOG.md
@@ -102,7 +107,7 @@ base-da-empresa/
   clientes/
     README.md
   processos/
-    README.md
+    mapa-dos-processos.md
   .claude/
     skills/
       configurar-cerebro/
@@ -113,14 +118,16 @@ base-da-empresa/
 
 | Local | O que guardar |
 |---|---|
-| [identidade.md](identidade.md) | Quem é a empresa e como decide, escreve e trabalha. |
+| [contexto-da-empresa/](contexto-da-empresa/identidade.md) | Cinco áreas: identidade, ofertas, clientes e mercado, pessoas e comunicação. |
 | [clientes/](clientes/README.md) | Contexto, fontes e particularidades de clientes reais. |
-| [processos/](processos/README.md) | Procedimentos e critérios, com fonte e estágio. |
+| [processos/](processos/mapa-dos-processos.md) | Mapa macro de jornada, back office e rotinas. Documentação detalhada entra conforme a necessidade. |
 | [LOG.md](LOG.md) | Data, autoria, trabalho, resultado e pendências de cada sessão. |
 | [CLAUDE.md](CLAUDE.md) | Início automático, leitura de contexto e conferência da base. Importa as regras gerais. |
 | [AGENTS.md](AGENTS.md) | Onde guardar, como revisar, registrar e preservar o trabalho. |
 | [.claude/skills/configurar-cerebro/](.claude/skills/configurar-cerebro/SKILL.md) | Preparar ou retomar a base privada. |
 | [.claude/skills/salvar/](.claude/skills/salvar/SKILL.md) | Registrar e concluir o salvamento em main. |
+
+Os arquivos de contexto são pontos de partida, preenchidos aos poucos. A IA mantém fontes, datas e uma referência principal, seguindo o AGENTS.md. Não criar pastas vazias ou documentos adicionais apenas para completar a árvore.
 
 As skills de tarefas reais podem ser acrescentadas conforme o uso. Consultam processos e contexto sem manter cópias concorrentes dos critérios.
 
@@ -138,7 +145,7 @@ As outras ferramentas podem conectar pelo Composio remoto no Claude. Cada pessoa
 
 ## Sobre este modelo
 
-Criado em 11/10/2026 para a mentoria de segundo cérebro e IA da LÍNIA. Revisado em 14/10/2026: início pelas instruções, preparação no Cloud e salvamento com destino main. A [manutenção no log](LOG.md#manutenção-do-modelo) registra a origem e os limites de teste; não é histórico de uma empresa.
+Criado em 11/10/2026 para a mentoria de segundo cérebro e IA da LÍNIA. Revisado em 14/10/2026: início pelas instruções, preparação no Cloud e salvamento com destino main. Revisado em 17/10/2026: contexto separado por áreas, mapa de processos nomeado e organização, fontes e atualização atribuídas à IA. A [manutenção no log](LOG.md#manutenção-do-modelo) registra a origem e os limites de teste; não é histórico de uma empresa.
 
 Uma base gerada tem vida própria. Revisões futuras deste modelo não atualizam automaticamente a base da empresa; revisar a adaptação preservando seu conteúdo.
 

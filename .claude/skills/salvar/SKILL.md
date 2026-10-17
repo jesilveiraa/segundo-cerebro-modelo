@@ -19,7 +19,7 @@ Reutilizar quem se identificou na conversa. Se faltar confirmação ou houver am
 
 ## Organizar e revisar
 
-1. Guardar cada informação na sua fonte: identidade em identidade.md, procedimentos em processos, resultados e particularidades no cliente. Atualizar índices quando criar documentos.
+1. Guardar cada informação na sua fonte: contexto geral nos arquivos pertinentes de contexto-da-empresa/, mapa macro em processos/mapa-dos-processos.md, procedimentos em processos, resultados e particularidades no cliente. Atualizar índices quando criar documentos.
 2. Distinguir fatos, decisões, propostas e pendências, com data e fonte. Preservar fontes históricas e não inventar clientes, acessos ou compromissos.
 3. Acrescentar o registro da sessão em LOG.md com autoria, apoio de IA, trabalho e links, resultado, pendências e fonte. Se houver apenas retomada de um envio já registrado, não duplicar a entrada. Não afirmar envio antes de conferir.
 4. Conferir diferenças, arquivos novos e conteúdo preparado, incluindo `git diff --check`. Não incluir credenciais, arquivos pessoais ignorados ou conteúdo fora do escopo. Se houver conteúdo preparado alheio, preservá-lo e separar o escopo antes de commit.
@@ -30,7 +30,7 @@ Guardar o que foi produzido ou confirmado dentro do pedido, sem copiar toda a co
 
 | Informação da sessão | Onde e como registrar |
 |---|---|
-| Fato confirmado sobre a empresa, pessoa ou critério | identidade.md ou contexto pertinente, com data e fonte. |
+| Fato confirmado sobre a empresa, pessoa ou critério | Arquivo pertinente de contexto-da-empresa/, com data disponível e fonte. |
 | Procedimento ou critério de trabalho | Documento pertinente em processos/. Identificar rascunho, proposta ou validação conforme a evidência. |
 | Decisão ou resultado específico de cliente | Documento pertinente em clientes/<cliente>/, com data, origem e motivo disponível. Referenciar no índice e no log quando necessário. |
 | Decisão geral sobre identidade ou processo | Na fonte do assunto. Não criar uma pasta de decisões separada sem necessidade. |

@@ -9,7 +9,7 @@ A base privada já precisa existir e estar selecionada no Claude Code em Cloud. 
 
 ## Conferir ambiente e acesso
 
-Leia README.md, AGENTS.md, CLAUDE.md, identidade.md e os registros pertinentes de LOG.md. Siga o início de CLAUDE.md para conferir a base, receber main e identificar a pessoa. Reutilize nome, link e respostas já fornecidos.
+Leia README.md, AGENTS.md, CLAUDE.md, contexto-da-empresa/identidade.md e os registros pertinentes de LOG.md. Siga o início de CLAUDE.md para conferir a base, receber main e identificar a pessoa. Reutilize nome, link e respostas já fornecidos.
 
 Origin deve corresponder à base própria da empresa confirmada. A branch de sessão Cloud é permitida; main é o destino final. Não renomear a branch nem trocar origin automaticamente. Se estiver no modelo público, explicar que ele é referência e orientar selecionar a base privada antes de preencher informações da empresa. Não criar outra base como efeito desta skill.
 
@@ -21,7 +21,7 @@ A autenticação do Claude, Git e uma ferramenta GitHub pode ser diferente. Orie
 
 Reutilizar o que já estiver preenchido. Perguntar somente o que faltar: nome da empresa, o que faz e para quem, pessoas e papéis. Critérios e tom podem continuar a definir. Uma segunda participante usa a mesma base e preserva os registros existentes.
 
-Atualizar identidade.md com fonte, data e pendências. Ajustar README para apresentar a empresa, incluir o link da base privada, privacidade conferida e fontes escolhidas. Preservar a referência ao modelo e distinguir sua URL do destino de trabalho. A árvore representa a organização no repositório, não um caminho obrigatório no computador.
+Atualizar contexto-da-empresa/identidade.md e os arquivos pertinentes de contexto-da-empresa/ com o que foi confirmado, sem exigir o preenchimento de todas as áreas. Pessoas ficam em pessoas.md; o mapa macro de jornada, back office e rotinas fica em processos/mapa-dos-processos.md. A IA mantém fontes, datas e uma referência principal conforme AGENTS.md. Começar pelos materiais disponíveis e perguntar só pelas lacunas. Ajustar README para apresentar a empresa, incluir o link da base privada, privacidade conferida e fontes escolhidas. Preservar a referência ao modelo e distinguir sua URL do destino de trabalho. A árvore representa a organização no repositório, não um caminho obrigatório no computador.
 
 Não duplicar critérios nas skills nem fixar o endereço da empresa dentro de salvar. Não criar clientes, reuniões ou processos fictícios. Não manter no guia da empresa instruções de clone ou chamadas à skill de início retirada. Se a base veio de versão antiga do modelo, revisar suas instruções antes de declarar a configuração pronta, preservando alterações reais da empresa. Não apagar arquivos pessoais anteriores como efeito dessa revisão.
 

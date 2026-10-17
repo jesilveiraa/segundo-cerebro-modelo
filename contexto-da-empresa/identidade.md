@@ -8,15 +8,12 @@ Preencher com as pessoas que usam esta base. Informação desconhecida fica como
 
 - Nome da empresa: a definir.
 - O que fazemos e para quem: a definir.
-- Pessoas e papéis: a definir.
 
 ## Como decidimos
 
 Princípios, critérios e limites: a definir.
 
-## Como escrevemos
-
-Tom, termos utilizados, exemplos e preferências: a definir.
+Pessoas e responsabilidades ficam em [pessoas.md](pessoas.md); tom e referências, em [comunicacao-e-referencias.md](comunicacao-e-referencias.md).
 
 ## Como trabalhamos
 
