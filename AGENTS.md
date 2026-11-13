@@ -18,7 +18,7 @@ Usar fontes reais e indicar data. Distinguir fato confirmado, proposta, hipótes
 - Jornada do cliente, back office e rotinas: processos/mapa-dos-processos.md. Detalhes de cada processo entram em documentos próprios somente quando houver conteúdo.
 - Contexto e resultados específicos: clientes/<cliente>/, com entrada no README do cliente e link em clientes/README.md.
 - Fontes e conexões gerais: seção correspondente no README da raiz. Fontes específicas: README do cliente.
-- Trabalho realizado em cada sessão: LOG.md.
+- Trabalho realizado em cada sessão: log/, um arquivo por sessão.
 - Rotinas da IA: .claude/skills/. Consultam os documentos de negócio sem copiar os critérios para dentro da skill.
 
 Criar clientes e documentos somente com material real. Começar com arquivos simples; novas subpastas dependem do conteúdo. Preservar fontes de reunião e seus avisos. Separar transcrição de análise e combinados quando necessários.
@@ -42,9 +42,11 @@ Tarefas atuais, agenda, planilhas e gravações ficam nos sistemas escolhidos. L
 
 ## Encerrar
 
-Toda sessão, inclusive análise, recebe entrada em LOG.md: data, quem trabalhou, apoio de IA, trabalho e links, resultado, pendências e fonte. Reaproveitar autoria confirmada na conversa. O log não substitui decisões ou tarefas; preservar entradas anteriores.
+Toda sessão, inclusive análise, cria o seu próprio arquivo em `log/AAAA-MM-DD-assunto.md`: data, quem trabalhou, apoio de IA, trabalho e links, resultado, pendências e fonte. Reaproveitar autoria confirmada na conversa. Não editar o arquivo de log de outra sessão: cada sessão escreve só o seu, para que sessões simultâneas nunca disputem o mesmo arquivo. Não manter um índice de log atualizado a cada sessão, porque o índice viraria esse ponto de disputa; a pasta ordenada por data já cumpre esse papel, e um sumário é gerado quando alguém pedir. O log não substitui decisões ou tarefas; preservar registros anteriores.
 
-O pedido de salvar, compartilhar ou encerrar autoriza registrar e enviar o trabalho da sessão para main na base privada conferida. Configurar-cerebro também inclui esse envio para concluir a preparação. Sem esses pedidos, registrar o que já foi autorizado e informar que o envio está pendente. Não confundir envio para uma branch de trabalho com conclusão em main.
+O pedido de trabalho autoriza registrar e enviar para main, na base privada conferida, cada etapa concluída e revisada, sem esperar um pedido separado de salvamento. Publicar cedo e com frequência: enquanto não está em main, o trabalho vive em uma branch de sessão descartável e se perde quando a sessão termina. Os pedidos de salvar, compartilhar ou encerrar continuam valendo e encerram o ciclo; configurar-cerebro inclui esse envio para concluir a preparação. Não enviar rascunho que a pessoa ainda não conferiu, nem para destino diferente da base confirmada. Não confundir envio para uma branch de trabalho com conclusão em main.
+
+Toda resposta que alterou arquivos da base termina com uma linha de situação, nestas palavras: "Enviado para a main: sim" ou "Enviado para a main: não", seguida do motivo e do próximo passo. Essa linha é obrigatória mesmo quando a pessoa não pediu para salvar e mesmo quando a resposta já explicou o trabalho.
 
 ## Sincronização e acesso
 

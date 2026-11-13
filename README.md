@@ -103,6 +103,8 @@ base-da-empresa/
   AGENTS.md
   CLAUDE.md
   LOG.md
+  log/
+    README.md
   .gitignore
   clientes/
     README.md
@@ -121,7 +123,8 @@ base-da-empresa/
 | [contexto-da-empresa/](contexto-da-empresa/identidade.md) | Cinco áreas: identidade, ofertas, clientes e mercado, pessoas e comunicação. |
 | [clientes/](clientes/README.md) | Contexto, fontes e particularidades de clientes reais. |
 | [processos/](processos/mapa-dos-processos.md) | Mapa macro de jornada, back office e rotinas. Documentação detalhada entra conforme a necessidade. |
-| [LOG.md](LOG.md) | Data, autoria, trabalho, resultado e pendências de cada sessão. |
+| [log/](log/README.md) | Um arquivo por sessão, com data, autoria, trabalho, resultado e pendências. Sessões simultâneas não disputam o mesmo arquivo. |
+| [LOG.md](LOG.md) | Regra de registro e manutenção do modelo. Não recebe as entradas das sessões. |
 | [CLAUDE.md](CLAUDE.md) | Início automático, leitura de contexto e conferência da base. Importa as regras gerais. |
 | [AGENTS.md](AGENTS.md) | Onde guardar, como revisar, registrar e preservar o trabalho. |
 | [.claude/skills/configurar-cerebro/](.claude/skills/configurar-cerebro/SKILL.md) | Preparar ou retomar a base privada. |
@@ -145,7 +148,7 @@ As outras ferramentas podem conectar pelo Composio remoto no Claude. Cada pessoa
 
 ## Sobre este modelo
 
-Criado em 11/10/2026 para a mentoria de segundo cérebro e IA da LÍNIA. Revisado em 14/10/2026: início pelas instruções, preparação no Cloud e salvamento com destino main. Revisado em 17/10/2026: contexto separado por áreas, mapa de processos nomeado e organização, fontes e atualização atribuídas à IA. A [manutenção no log](LOG.md#manutenção-do-modelo) registra a origem e os limites de teste; não é histórico de uma empresa.
+Criado em 11/10/2026 para a mentoria de segundo cérebro e IA da LÍNIA. Revisado em 14/10/2026: início pelas instruções, preparação no Cloud e salvamento com destino main. Revisado em 17/10/2026: contexto separado por áreas, mapa de processos nomeado e organização, fontes e atualização atribuídas à IA. Revisado em 13/11/2026: publicação em main a cada etapa concluída, nova tentativa diante de concorrência, linha obrigatória informando se o envio aconteceu e log com um arquivo por sessão. A [manutenção no log](LOG.md#manutenção-do-modelo) registra a origem e os limites de teste; não é histórico de uma empresa.
 
 Uma base gerada tem vida própria. Revisões futuras deste modelo não atualizam automaticamente a base da empresa; revisar a adaptação preservando seu conteúdo.
 

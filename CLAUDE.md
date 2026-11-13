@@ -20,4 +20,6 @@ Na preparação inicial ou retomada de uma preparação incompleta, seguir confi
 
 O resultado esperado é o trabalho registrado, revisado e confirmado em main no GitHub. A skill salvar recebe as atualizações, combina os trabalhos e envia a versão da sessão para main. Não deixar uma branch ou PR como se fossem salvamento concluído.
 
+Publicar ao longo do trabalho, a cada etapa concluída e revisada, sem esperar um pedido de salvamento no fim. A branch da sessão é descartável: o que não chegou a main se perde quando a sessão termina. Toda resposta que alterou arquivos da base termina com uma linha de situação, nestas palavras: "Enviado para a main: sim" ou "Enviado para a main: não", seguida do motivo e do próximo passo.
+
 Se acesso, proteção da base ou conflito impedir concluir, preservar os arquivos e informar a pendência. Não contornar proteções ou forçar envio. A pessoa não precisa executar comandos Git nem gerenciar branches; explicar os resultados em linguagem simples.

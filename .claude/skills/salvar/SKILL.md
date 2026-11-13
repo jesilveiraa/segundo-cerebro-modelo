@@ -21,7 +21,7 @@ Reutilizar quem se identificou na conversa. Se faltar confirmação ou houver am
 
 1. Guardar cada informação na sua fonte: contexto geral nos arquivos pertinentes de contexto-da-empresa/, mapa macro em processos/mapa-dos-processos.md, procedimentos em processos, resultados e particularidades no cliente. Atualizar índices quando criar documentos.
 2. Distinguir fatos, decisões, propostas e pendências, com data e fonte. Preservar fontes históricas e não inventar clientes, acessos ou compromissos.
-3. Acrescentar o registro da sessão em LOG.md com autoria, apoio de IA, trabalho e links, resultado, pendências e fonte. Se houver apenas retomada de um envio já registrado, não duplicar a entrada. Não afirmar envio antes de conferir.
+3. Criar o registro da sessão em `log/AAAA-MM-DD-assunto.md`, com autoria, apoio de IA, trabalho e links, resultado, pendências e fonte. Um arquivo por sessão; não editar o arquivo de outra sessão nem manter um índice atualizado a cada salvamento. Se houver apenas retomada de um envio já registrado, atualizar o arquivo daquela sessão em vez de criar outro. Não afirmar envio antes de conferir.
 4. Conferir diferenças, arquivos novos e conteúdo preparado, incluindo `git diff --check`. Não incluir credenciais, arquivos pessoais ignorados ou conteúdo fora do escopo. Se houver conteúdo preparado alheio, preservá-lo e separar o escopo antes de commit.
 
 ### Selecionar o que fica como conhecimento
@@ -36,7 +36,7 @@ Guardar o que foi produzido ou confirmado dentro do pedido, sem copiar toda a co
 | Decisão geral sobre identidade ou processo | Na fonte do assunto. Não criar uma pasta de decisões separada sem necessidade. |
 | Hipótese, ideia ou ponto a confirmar | Identificar seu estágio no documento pertinente, se fizer parte do trabalho pedido. Não converter em decisão ou compromisso. |
 | Tarefa, prazo, agenda ou indicador atual | Consultar a fonte operacional escolhida no README. Registrar seu link na base, sem manter outra lista concorrente. Salvar não autoriza alterar essa ferramenta externa. |
-| Trabalho e limitações desta sessão | LOG.md, com links para os documentos, resultado e pendências reais. O log não é lista de tarefas atualizada. |
+| Trabalho e limitações desta sessão | Arquivo próprio em log/, com links para os documentos, resultado e pendências reais. O log não é lista de tarefas atualizada. |
 
 Se a fonte de tarefas ainda estiver a definir, registrar essa ausência e os pontos em aberto no relato da sessão. Não inventar fonte, responsável ou prazo, nem gerar arquivo de pendências ou controle de tarefas por iniciativa própria.
 
@@ -51,13 +51,15 @@ Execute pelo Git disponível nesta base. Não fixar o nome da branch da sessão 
 3. Comparar HEAD com origin/main e revisar diferenças e commits envolvidos. Se HEAD já contiver origin/main, manter. Se estiver somente atrás, avançar sem reescrever histórico. Se houver versões de ambos os lados, combinar origin/main na branch atual com merge, preservando os dois trabalhos. Não usar rebase, reset, stash, limpeza ou força para descartar ou ocultar alterações.
 4. Em conflito, ler a base e os dois lados. Preservar entradas independentes do log e conteúdo compatível. Só concluir a combinação quando o significado estiver claro; uma decisão sem evidência exige confirmação. Não escolher um lado inteiro automaticamente nem declarar salvamento com conflito pendente.
 5. Conferir que o histórico pronto para envio contém a main recebida e somente alterações conhecidas e autorizadas além dela. Enviar a versão da sessão com `git push origin HEAD:main`. Não usar `git push origin main` quando a branch local main estiver desatualizada: esse comando pode enviar outra versão, em vez do trabalho da sessão.
-6. Se outra pessoa avançou main e o envio for recusado por concorrência, receber e combinar novamente, rever o resultado e tentar uma vez. Uma nova recusa, falha de acesso ou proteção de main encerra a tentativa. Não alterar regras, permissões ou forçar o envio. Se a base exigir PR, preservar e explicar o que falta para concluir a integração; PR aberto sozinho não é main atualizada.
+6. Se outra pessoa avançou main e o envio for recusado por concorrência, receber e combinar novamente, rever o resultado e reenviar. Repetir esse ciclo enquanto a recusa for apenas de concorrência, até cinco vezes. Encerrar a tentativa diante de falha de acesso, proteção de main ou conflito de conteúdo que exija leitura humana. Não alterar regras, permissões ou forçar o envio. Se a base exigir PR, preservar e explicar o que falta para concluir a integração; PR aberto sozinho não é main atualizada.
 7. Após o envio, conferir main remota. Comparar a versão enviada com `git ls-remote origin refs/heads/main`. Se main avançou novamente, fazer fetch e conferir `git merge-base --is-ancestor <versao-enviada> origin/main`: sucesso comprova inclusão do trabalho. Se a consulta falhar ou não comprovar inclusão, informar confirmação pendente.
 8. Conferir o estado restante. Se houver mudanças ou commits fora do que foi enviado, informar o que permanece pendente; não chamar toda a sessão de salva.
 
 ## Resposta
 
 Dizer o que foi registrado, onde está e se main contém o trabalho. Exemplo, somente com comprovação: “Salvei o processo e o log na base compartilhada. A outra pessoa já pode consultar a versão atualizada.”
+
+Terminar sempre com uma linha de situação, nestas palavras: "Enviado para a main: sim" ou "Enviado para a main: não", seguida do motivo e do próximo passo. Essa linha é obrigatória mesmo quando a resposta já explicou o trabalho.
 
 Se não concluiu: “Os arquivos estão preservados na sessão. Ainda falta concluir o salvamento na base compartilhada por [motivo e próximo passo].” Não chamar uma branch enviada ou PR aberto de salvamento concluído.
 
